@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援
 POWERLEVEL9K_MODE='nerdfont-complete'
 
