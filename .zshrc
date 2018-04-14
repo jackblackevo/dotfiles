@@ -17,10 +17,10 @@ antigen theme bhilburn/powerlevel9k
 
 # 透過 Antigen 使用 Oh My Zsh 內建 plug-ins
 antigen bundle git
-antigen bundle nvm
 antigen bundle z
 
 # 透過 Antigen 使用其他 Zsh plug-ins
+antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zdharma/history-search-multi-word
