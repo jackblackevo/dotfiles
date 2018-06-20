@@ -23,7 +23,6 @@ antigen bundle z
 antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zdharma/history-search-multi-word
 antigen bundle Tarrasch/zsh-bd
 antigen bundle changyuheng/zsh-interactive-cd
 antigen bundle changyuheng/fz
