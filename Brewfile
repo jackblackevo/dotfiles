@@ -7,7 +7,7 @@ brew "fzf"
 brew "git"
 brew "mas"
 brew "tig"
-brew "yarn"
+brew "yarn", args: ["ignore-dependencies"]
 brew "z"
 brew "zsh"
 cask "alfred"
@@ -20,6 +20,6 @@ cask "karabiner-elements"
 cask "pritunl"
 cask "sequel-pro"
 cask "visual-studio-code"
-mas "Magnet", id: 441258766
-mas "Pixelmator Pro", id: 1289583905
-mas "Slack", id: 803453959
+mas "com.crowdcafe.windowmagnet", id: 441258766
+mas "com.pixelmatorteam.pixelmator.x", id: 1289583905
+mas "com.tinyspeck.slackmacgap", id: 803453959
