@@ -20,6 +20,6 @@ cask "karabiner-elements"
 cask "pritunl"
 cask "sequel-pro"
 cask "visual-studio-code"
-mas "com.crowdcafe.windowmagnet", id: 441258766
+mas "com.manytricks.Moom", id: 419330170
 mas "com.pixelmatorteam.pixelmator.x", id: 1289583905
 mas "com.tinyspeck.slackmacgap", id: 803453959
