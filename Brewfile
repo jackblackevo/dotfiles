@@ -1,6 +1,6 @@
-tap "caskroom/fonts"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 brew "antigen"
 brew "fzf"
@@ -13,12 +13,12 @@ brew "zsh"
 cask "alfred"
 cask "bartender"
 cask "dash"
+cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
 cask "notion"
 cask "visual-studio-code"
-cask "caskroom/fonts/font-hack-nerd-font"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
