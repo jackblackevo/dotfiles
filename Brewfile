@@ -20,4 +20,5 @@ mas "LINE", id: 539883307
 mas "Moom", id: 419330170
 mas "Pixelmator Pro", id: 1289583905
 mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
 mas "Trello", id: 1278508951
