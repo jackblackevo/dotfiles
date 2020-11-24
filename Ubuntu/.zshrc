@@ -3,6 +3,9 @@ export TERM="xterm-256color"
 # https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
 export PATH="$HOME/.local/bin:$PATH"
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援
 POWERLEVEL9K_MODE='nerdfont-complete'
 
