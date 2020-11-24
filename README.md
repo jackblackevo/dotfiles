@@ -2,7 +2,7 @@
 1. Install [Homebrew](https://brew.sh/)  
    `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 2. Install all dependencies from the `Brewfile` through [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand)  
-   `brew bundle`
+   `curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Brewfile > /tmp/Brewfile && brew bundle --file /tmp/Brewfile && rm /tmp/Brewfile`
 3. Copy `.zshrc` file to home directory
    `curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.zshrc > ~/.zshrc`
 4. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew)  
