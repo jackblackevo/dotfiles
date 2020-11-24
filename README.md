@@ -56,3 +56,7 @@
        "colorScheme": "Solarized Dark"
    }
    ```
+9. Set Zsh as default shell
+   ```bash
+   chsh -s $(which zsh)
+   ```
