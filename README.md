@@ -23,29 +23,36 @@
    ```
 
 ## WSL - Ubuntu
-1. Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)  
-   Hack Regular Nerd Font Complete Mono Windows Compatible.ttf
-2. Install packages  
+1. Install packages  
    ```bash
    curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
    ```
-3. Install [fzf](https://github.com/junegunn/fzf#using-git)  
+2. Install [fzf](https://github.com/junegunn/fzf#using-git)  
    ```bash
    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
    ```
-4. Install [Z](https://github.com/rupa/z)  
+3. Install [Z](https://github.com/rupa/z)  
    ```bash
    mkdir -p ~/.local/etc/profile.d/ && curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.local/etc/profile.d/z.sh
    ```
-5. Install [Antigen](https://github.com/zsh-users/antigen/wiki/Installation)  
+4. Install [Antigen](https://github.com/zsh-users/antigen/wiki/Installation)  
    ```bash
    mkdir -p ~/.local/share/antigen/ && curl -fsSL https://git.io/antigen > ~/.local/share/antigen/antigen.zsh
    ```
-6. Copy `.zshrc` file to home directory  
+5. Copy `.zshrc` file to home directory  
    ```bash
    curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc > ~/.zshrc
    ```
-7. Reload Zsh configuration  
+6. Reload Zsh configuration  
    ```bash
    zsh
+   ```
+7. Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)  
+   Hack Regular Nerd Font Complete Mono Windows Compatible.ttf
+8. Configure Windows Terminal profile
+   ```json
+   {
+       "fontFace": "Hack NF",
+       "colorScheme": "Solarized Dark"
+   }
    ```
