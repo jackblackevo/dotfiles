@@ -10,7 +10,7 @@ export EDITOR="$VISUAL"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # 載入 Antigen
-source /usr/share/zsh-antigen/antigen.zsh
+source ~/.local/share/antigen/antigen.zsh
 
 # 透過 Antigen 來使用 Oh My Zsh
 antigen use oh-my-zsh
