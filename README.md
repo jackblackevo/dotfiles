@@ -37,15 +37,11 @@
    ```bash
    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.local/etc/profile.d/z.sh
    ```
-5. Install [Antigen](https://github.com/zsh-users/antigen/wiki/Installation)  
-   ```bash
-   curl -fsSL https://git.io/antigen > ~/.local/share/antigen/antigen.zsh
-   ```
-6. Copy `.zshrc` file to home directory  
+5. Copy `.zshrc` file to home directory  
    ```bash
    curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc > ~/.zshrc
    ```
-7. Reload Zsh configuration  
+6. Reload Zsh configuration  
    ```bash
    zsh
    ```
