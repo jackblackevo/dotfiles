@@ -35,11 +35,11 @@
    ```
 4. Install [Z](https://github.com/rupa/z)  
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.local/etc/profile.d/z.sh
+   mkdir -p ~/.local/etc/profile.d/ && curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.local/etc/profile.d/z.sh
    ```
 5. Install [Antigen](https://github.com/zsh-users/antigen/wiki/Installation)  
    ```bash
-   curl -fsSL https://git.io/antigen > ~/.local/share/antigen/antigen.zsh
+   mkdir -p ~/.local/share/antigen/ && curl -fsSL https://git.io/antigen > ~/.local/share/antigen/antigen.zsh
    ```
 6. Copy `.zshrc` file to home directory  
    ```bash
