@@ -26,6 +26,7 @@ cask "firefox"
 cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "iterm2"
+cask "kap"
 cask "karabiner-elements"
 cask "notion"
 cask "postman"
@@ -33,7 +34,6 @@ cask "spotify"
 cask "transmit"
 cask "visual-studio-code"
 cask "vlc"
-mas "Gifski", id: 1351639930
 mas "LINE", id: 539883307
 mas "Messenger", id: 1480068668
 mas "Moom", id: 419330170
