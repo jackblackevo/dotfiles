@@ -25,7 +25,7 @@
 ## WSL - Ubuntu
 1. Install packages  
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
+   sudo apt update && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
    ```
 2. Install [fzf](https://github.com/junegunn/fzf#using-git)  
    ```bash
