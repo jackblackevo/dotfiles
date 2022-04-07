@@ -52,8 +52,12 @@
 8. Configure Windows Terminal profile
    ```json
    {
-       "fontFace": "Hack NF",
-       "colorScheme": "Solarized Dark"
+       "colorScheme": "Solarized Dark",
+       "font":
+       {
+           "face": "Hack NF"
+       },
+       "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\jackblackevo"
    }
    ```
 9. Set Zsh as default shell
