@@ -63,9 +63,25 @@
    ```
 7. Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)  
    Hack Regular Nerd Font Complete Mono Windows Compatible.ttf
-8. Configure Windows Terminal profile
-   ```json
+8. Configure Windows Terminal
+   ```jsonc
    {
+       // actions
+       [
+           {
+                "command":
+                {
+                    "action": "copy",
+                    "singleLine": false
+                },
+                "keys": "ctrl+shift+c"
+            },
+            {
+                "command": "paste",
+                "keys": "ctrl+shift+v"
+            },
+       ],
+       // profiles.list
        "colorScheme": "Solarized Dark",
        "font":
        {
