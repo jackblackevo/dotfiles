@@ -21,6 +21,10 @@
    ```bash
    zsh
    ```
+6. Configure Neovim
+   ```bash
+   mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/init.vim > ~/.config/nvim/init.vim
+   ```
 
 ## WSL - Ubuntu
 1. Install packages  
@@ -64,3 +68,15 @@
    ```bash
    chsh -s $(which zsh)
    ```
+10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
+    See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
+    ```bash
+    curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+    unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+    chmod +x /tmp/win32yank.exe
+    sudo mv /tmp/win32yank.exe /usr/local/bin/
+    ```
+11. Configure Neovim
+    ```bash
+    mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/init.vim > ~/.config/nvim/init.vim
+    ```
