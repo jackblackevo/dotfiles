@@ -21,19 +21,9 @@
    ```bash
    zsh
    ```
-6. Install vim-plug  
-   See: [Installation - Neovim - Unix, Linux](https://github.com/junegunn/vim-plug#unix-linux)
-   ```bash
-   sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-   ```
-7. Configure Neovim
+6. Configure Neovim
    ```bash
    mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/init.vim > ~/.config/nvim/init.vim
-   ```
-8. Open Neovim and run command below to install plugins
-   ```
-   :PlugInstall
    ```
 
 ## WSL - Ubuntu
@@ -102,17 +92,7 @@
     chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin/
     ```
-11. Install vim-plug  
-    See: [Installation - Neovim - Unix, Linux](https://github.com/junegunn/vim-plug#unix-linux)
-    ```bash
-    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    ```
-12. Configure Neovim
+11. Configure Neovim
     ```bash
     mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/init.vim > ~/.config/nvim/init.vim
-    ```
-13. Open Neovim and run command below to install plugins
-    ```
-    :PlugInstall
     ```
