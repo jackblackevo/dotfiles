@@ -2,11 +2,15 @@ set clipboard=unnamedplus
 set number
 set relativenumber
 
-" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation-of-missing-plugins
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Fix - VSCode-Neovim: Error detected while processing command line: E344
+" https://github.com/vscode-neovim/vscode-neovim#conditional-initvim
+if !exists('g:vscode')
+  " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation-of-missing-plugins
+  " Install vim-plug if not found
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  endif
 endif
 
 " Run PlugInstall if there are missing plugins
