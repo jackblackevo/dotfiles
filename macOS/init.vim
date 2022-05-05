@@ -29,6 +29,9 @@ call plug#end()
 " https://github.com/vscode-neovim/vscode-neovim#conditional-initvim
 if exists('g:vscode')
   " VSCode extension
+  " https://github.com/vscode-neovim/vscode-neovim#keyboard-quickfix
+  nnoremap z= <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
+
   " https://github.com/vscode-neovim/vscode-neovim#vim-commentary
   xmap gc  <Plug>VSCodeCommentary
   nmap gc  <Plug>VSCodeCommentary
