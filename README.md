@@ -23,7 +23,9 @@
    ```
 6. Configure Neovim
    ```bash
-   mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/init.vim > ~/.config/nvim/init.vim
+   mkdir -p ~/.config/nvim/ \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/init.vim > ~/.config/nvim/init.vim \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/vscode.vim > ~/.config/nvim/vscode.vim
    ```
 
 ## WSL - Ubuntu
@@ -94,5 +96,7 @@
     ```
 11. Configure Neovim
     ```bash
-    mkdir -p ~/.config/nvim/ && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/init.vim > ~/.config/nvim/init.vim
+    mkdir -p ~/.config/nvim/ \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/init.vim > ~/.config/nvim/init.vim \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/vscode.vim > ~/.config/nvim/vscode.vim
     ```
