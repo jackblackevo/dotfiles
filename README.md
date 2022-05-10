@@ -27,6 +27,10 @@
    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/init.vim > ~/.config/nvim/init.vim \
    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/vscode.vim > ~/.config/nvim/vscode.vim
    ```
+7. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+   ```bash
+   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+   ```
 
 ## WSL - Ubuntu
 1. Install packages  
