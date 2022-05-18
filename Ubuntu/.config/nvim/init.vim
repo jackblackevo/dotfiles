@@ -28,7 +28,10 @@ call plug#begin()
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary', Cond(!exists('g:vscode'))
+Plug 'easymotion/vim-easymotion'
 call plug#end()
+
+map <Leader> <Plug>(easymotion-prefix)
 
 " https://github.com/vscode-neovim/vscode-neovim#conditional-initvim
 if exists('g:vscode')
