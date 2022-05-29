@@ -25,7 +25,9 @@
    ```bash
    mkdir -p ~/.config/nvim/ \
    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/init.vim > ~/.config/nvim/init.vim \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/vscode.vim > ~/.config/nvim/vscode.vim
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/plugins.vim > ~/.config/nvim/plugins.vim \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/settings.vim > ~/.config/nvim/settings.vim \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/nvim/mappings.vim > ~/.config/nvim/mappings.vim 
    ```
 7. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
    ```bash
@@ -102,5 +104,7 @@
     ```bash
     mkdir -p ~/.config/nvim/ \
     && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/nvim/init.vim > ~/.config/nvim/init.vim \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/nvim/vscode.vim > ~/.config/nvim/vscode.vim
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/nvim/plugins.vim > ~/.config/nvim/plugins.vim \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/nvim/settings.vim > ~/.config/nvim/settings.vim \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/nvim/mappings.vim > ~/.config/nvim/mappings.vim 
     ```
