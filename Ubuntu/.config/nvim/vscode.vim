@@ -9,20 +9,20 @@ nmap gcc <Plug>VSCodeCommentaryLine
 
 " https://github.com/LunarVim/LunarVim/blob/freeze/utils/lv-vscode/init.vim
 " Better Navigation
-nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
-xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
-nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
-xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
-nnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
-xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
-nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
-xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
+xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
+nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
+xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
+nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
+xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
+nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
+xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
 
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 
-nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
-xnoremap <silent> <Space> :<C-u>call VSCodeNotifyVisual('whichkey.show', 1)<CR>
+nnoremap <Space> <Cmd>call VSCodeNotify('whichkey.show')<CR>
+xnoremap <Space> <Cmd>call VSCodeNotifyVisual('whichkey.show', 1)<CR>
 
 " Simulate same TAB behavior in VSCode
-nmap <Tab> :Tabnext<CR>
-nmap <S-Tab> :Tabprev<CR>
+nmap <Tab> gt
+nmap <S-Tab> gT
