@@ -21,13 +21,14 @@
    ```bash
    zsh
    ```
-6. Configure Neovim
+6. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
    ```bash
-   mkdir -p ~/.config/nvim/ \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.vim > ~/.config/nvim/init.vim \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/plugins.vim > ~/.config/nvim/plugins.vim \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/settings.vim > ~/.config/nvim/settings.vim \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/mappings.vim > ~/.config/nvim/mappings.vim 
+   mkdir -p ~/.config/nvim/lua/ \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua > ~/.config/nvim/init.lua \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua > ~/.config/nvim/lua/plugins.lua \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua > ~/.config/nvim/lua/settings.lua \
+   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua > ~/.config/nvim/lua/mappings.lua \
+   && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
    ```
 7. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
    ```bash
@@ -100,11 +101,12 @@
     chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin/
     ```
-11. Configure Neovim
+11. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
-    mkdir -p ~/.config/nvim/ \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.vim > ~/.config/nvim/init.vim \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/plugins.vim > ~/.config/nvim/plugins.vim \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/settings.vim > ~/.config/nvim/settings.vim \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/mappings.vim > ~/.config/nvim/mappings.vim 
+    mkdir -p ~/.config/nvim/lua/ \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua > ~/.config/nvim/init.lua \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua > ~/.config/nvim/lua/plugins.lua \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua > ~/.config/nvim/lua/settings.lua \
+    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua > ~/.config/nvim/lua/mappings.lua \
+    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
