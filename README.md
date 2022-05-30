@@ -7,11 +7,11 @@
    ```
 2. Install all dependencies from the `Brewfile` through [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand)
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile > /tmp/Brewfile && brew bundle --file /tmp/Brewfile ; rm /tmp/Brewfile
+   curl -fsSLO --output-dir /tmp/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile && brew bundle --file /tmp/Brewfile ; rm /tmp/Brewfile
    ```
 3. Copy `.zshrc` file to home directory
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.zshrc > ~/.zshrc
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.zshrc
    ```
 4. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew)
    ```bash
@@ -23,11 +23,10 @@
    ```
 6. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
    ```bash
-   mkdir -p ~/.config/nvim/lua/ \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua > ~/.config/nvim/init.lua \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua > ~/.config/nvim/lua/plugins.lua \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua > ~/.config/nvim/lua/settings.lua \
-   && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua > ~/.config/nvim/lua/mappings.lua \
+   curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
+   && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
+   && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
+   && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
    ```
 7. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
@@ -46,15 +45,15 @@
    ```
 3. Install [Z](https://github.com/rupa/z)  
    ```bash
-   mkdir -p ~/.local/etc/profile.d/ && curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.local/etc/profile.d/z.sh
+   curl -fsSLO --create-dirs --output-dir ~/.local/etc/profile.d/ https://raw.githubusercontent.com/rupa/z/master/z.sh
    ```
 4. Install [Antigen](https://github.com/zsh-users/antigen/wiki/Installation)  
    ```bash
-   mkdir -p ~/.local/share/antigen/ && curl -fsSL https://git.io/antigen > ~/.local/share/antigen/antigen.zsh
+   curl -fsSLo antigen.zsh --create-dirs --output-dir ~/.local/share/antigen/ https://git.io/antigen
    ```
 5. Copy `.zshrc` file to home directory  
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc > ~/.zshrc
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc
    ```
 6. Reload Zsh configuration  
    ```bash
@@ -103,10 +102,9 @@
     ```
 11. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
-    mkdir -p ~/.config/nvim/lua/ \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua > ~/.config/nvim/init.lua \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua > ~/.config/nvim/lua/plugins.lua \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua > ~/.config/nvim/lua/settings.lua \
-    && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua > ~/.config/nvim/lua/mappings.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
     && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
