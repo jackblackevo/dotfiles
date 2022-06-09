@@ -37,6 +37,17 @@ return require('packer').startup(function(use)
     cond = check_not_vscode
   }
   use 'ggandor/lightspeed.nvim'
+  use {
+    'vim-airline/vim-airline',
+    setup = function()
+      vim.g.airline_powerline_fonts = 1
+    end,
+    cond = check_not_vscode
+  }
+  use {
+    'vim-airline/vim-airline-themes',
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
