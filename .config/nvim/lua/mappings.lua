@@ -1,15 +1,3 @@
-vim.g.surround_no_mappings = 1
-vim.api.nvim_set_keymap('n', 'ds', [[<Plug>Dsurround]], {})
-vim.api.nvim_set_keymap('n', 'cs', [[<Plug>Csurround]], {})
-vim.api.nvim_set_keymap('n', 'cS', [[<Plug>CSurround]], {})
-vim.api.nvim_set_keymap('n', 'ys', [[<Plug>Ysurround]], {})
-vim.api.nvim_set_keymap('n', 'yS', [[<Plug>YSurround]], {})
-vim.api.nvim_set_keymap('n', 'yss', [[<Plug>Yssurround]], {})
-vim.api.nvim_set_keymap('n', 'ySs', [[<Plug>YSsurround]], {})
-vim.api.nvim_set_keymap('n', 'ySS', [[<Plug>YSsurround]], {})
-vim.api.nvim_set_keymap('x', 'gs', [[<Plug>VSurround]], {})
-vim.api.nvim_set_keymap('x', 'gS', [[<Plug>VgSurround]], {})
-
 if vim.g.vscode then
   vim.api.nvim_set_keymap('n', 'z=', [[<Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>]], { noremap = true })
 
