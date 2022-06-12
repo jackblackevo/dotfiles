@@ -59,6 +59,10 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'rcarriga/nvim-notify',
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
