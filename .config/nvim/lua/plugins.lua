@@ -68,6 +68,9 @@ return require('packer').startup(function(use)
   }
   use {
     'neovim/nvim-lspconfig',
+    config = function()
+      require('lspconfig').tsserver.setup({})
+    end,
     cond = check_not_vscode
   }
 
