@@ -38,14 +38,11 @@ return require('packer').startup(function(use)
   }
   use 'ggandor/lightspeed.nvim'
   use {
-    'vim-airline/vim-airline',
-    setup = function()
-      vim.g.airline_powerline_fonts = 1
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup()
     end,
-    cond = check_not_vscode
-  }
-  use {
-    'vim-airline/vim-airline-themes',
     cond = check_not_vscode
   }
 
