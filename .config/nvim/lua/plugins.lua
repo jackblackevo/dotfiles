@@ -33,7 +33,11 @@ return require('packer').startup(function(use)
     end
   }
   use {
-    'tpope/vim-commentary',
+    'numToStr/Comment.nvim',
+    tag = 'v0.6',
+    config = function()
+      require('Comment').setup()
+    end,
     cond = check_not_vscode
   }
   use 'ggandor/lightspeed.nvim'
