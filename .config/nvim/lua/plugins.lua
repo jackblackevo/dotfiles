@@ -125,6 +125,13 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup({ '*' }, { css = true })
+    end,
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
