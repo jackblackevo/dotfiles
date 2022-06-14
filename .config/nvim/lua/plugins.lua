@@ -105,6 +105,16 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = function()
+      require('catppuccin').setup()
+      vim.g.catppuccin_flavour = 'dusk'
+      vim.cmd[[colorscheme catppuccin]]
+    end,
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
