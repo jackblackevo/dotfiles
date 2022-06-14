@@ -39,7 +39,14 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
-  use 'ggandor/lightspeed.nvim'
+  use {
+    'ggandor/lightspeed.nvim',
+    config = function()
+      if vim.g.vscode then
+        vim.api.nvim_set_hl(0, 'LightspeedCursor', { reverse = true })
+      end
+    end
+  }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
