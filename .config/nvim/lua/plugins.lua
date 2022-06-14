@@ -87,6 +87,17 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { 'lua', 'json', 'html', 'css', 'javascript', 'typescript', 'tsx' },
+        highlight = { enable = true }
+      })
+    end,
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
