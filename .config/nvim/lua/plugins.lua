@@ -127,10 +127,15 @@ return require('packer').startup(function(use)
         })
       end
     },
+    'williamboman/nvim-lsp-installer',
     'hrsh7th/cmp-nvim-lsp',
     {
       'neovim/nvim-lspconfig',
       config = function()
+        require('nvim-lsp-installer').setup({
+          automatic_installation = true
+        })
+
         local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
         require('lspconfig').tsserver.setup({
