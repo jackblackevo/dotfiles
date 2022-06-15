@@ -127,13 +127,17 @@ return require('packer').startup(function(use)
         })
       end
     },
-    cond = check_not_vscode
-  }
-  use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      require('lspconfig').tsserver.setup({})
-    end,
+    'hrsh7th/cmp-nvim-lsp',
+    {
+      'neovim/nvim-lspconfig',
+      config = function()
+        local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+        require('lspconfig').tsserver.setup({
+          capabilities = capabilities
+        })
+      end
+    },
     cond = check_not_vscode
   }
   use {
