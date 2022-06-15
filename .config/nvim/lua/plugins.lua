@@ -226,6 +226,17 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end)
+      vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end)
+      vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end)
+      vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end)
+    end,
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
