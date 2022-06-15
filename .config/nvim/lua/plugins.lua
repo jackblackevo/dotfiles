@@ -136,9 +136,13 @@ return require('packer').startup(function(use)
           automatic_installation = true
         })
 
+        local lspconfig = require('lspconfig')
         local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-        require('lspconfig').tsserver.setup({
+        lspconfig.tsserver.setup({
+          capabilities = capabilities
+        })
+        lspconfig.sumneko_lua.setup({
           capabilities = capabilities
         })
       end
