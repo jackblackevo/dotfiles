@@ -192,6 +192,17 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
+  use {
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      vim.opt.termguicolors = true
+
+      require('bufferline').setup()
+    end,
+    cond = check_not_vscode
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
