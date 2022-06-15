@@ -199,7 +199,30 @@ return require('packer').startup(function(use)
     config = function()
       vim.opt.termguicolors = true
 
-      require('bufferline').setup()
+      require('bufferline').setup({
+        options = {
+          offsets = {
+            {
+              filetype = 'NvimTree',
+              text = 'File Explorer',
+              highlight = 'Directory',
+              text_align = 'left'
+            }
+          }
+        }
+      })
+    end,
+    cond = check_not_vscode
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('nvim-tree').setup()
+
+      vim.keymap.set('n', '<leader>e', '<Cmd>NvimTreeToggle<CR>')
+      vim.keymap.set('n', '<leader>r', '<Cmd>NvimTreeRefresh<CR>')
+      vim.keymap.set('n', '<leader>n', '<Cmd>NvimTreeFindFile<CR>')
     end,
     cond = check_not_vscode
   }
