@@ -157,6 +157,9 @@ return require('packer').startup(function(use)
         lspconfig.sumneko_lua.setup({
           capabilities = capabilities
         })
+        lspconfig.eslint.setup({
+          capabilities = capabilities
+        })
       end
     },
     cond = check_not_vscode
