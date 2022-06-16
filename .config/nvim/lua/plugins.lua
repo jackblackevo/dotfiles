@@ -172,6 +172,30 @@ return require('packer').startup(function(use)
     cond = check_not_vscode
   }
   use {
+    'glepnir/lspsaga.nvim',
+    branch = 'main',
+    config = function()
+      require('lspsaga').init_lsp_saga()
+
+      vim.keymap.set('n', 'gh', function() require('lspsaga.provider').lsp_finder() end)
+      vim.keymap.set('n', 'ca', function() require('lspsaga.codeaction').code_action() end)
+      vim.keymap.set('v', 'ca', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>')
+      vim.keymap.set('n', 'K', function() require('lspsaga.hover').render_hover_doc() end)
+      vim.keymap.set('n', '<C-f>', function() require('lspsaga.action').smart_scroll_with_saga(1) end)
+      vim.keymap.set('n', '<C-b>', function() require('lspsaga.action').smart_scroll_with_saga(-1) end)
+      vim.keymap.set('n', 'gs', function() require('lspsaga.signaturehelp').signature_help() end)
+      vim.keymap.set('n', 'gr', function() require('lspsaga.rename').rename() end)
+      vim.keymap.set('n', 'gd', function() require('lspsaga.provider').preview_definition() end)
+      vim.keymap.set('n', '<leader>cd', function() require('lspsaga.diagnostic').show_line_diagnostics() end)
+      vim.keymap.set('n', '<leader>cc', function() require('lspsaga.diagnostic').show_cursor_diagnostics() end)
+      vim.keymap.set('n', '[e', function() require('lspsaga.diagnostic').lsp_jump_diagnostic_prev() end)
+      vim.keymap.set('n', ']e', function() require('lspsaga.diagnostic').lsp_jump_diagnostic_next() end)
+      vim.keymap.set('n', '<A-d>', function() require('lspsaga.floaterm').open_float_terminal() end)
+      vim.keymap.set('t', '<A-d>', '<C-\\><C-n>:lua require("lspsaga.floaterm").close_float_terminal()<CR>')
+    end,
+    cond = check_not_vscode
+  }
+  use {
     'windwp/nvim-autopairs',
     config = function()
       require('nvim-autopairs').setup()
