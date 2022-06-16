@@ -165,6 +165,13 @@ return require('packer').startup(function(use)
     cond = check_not_vscode
   }
   use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
+    cond = check_not_vscode
+  }
+  use {
     'ray-x/lsp_signature.nvim',
     config = function()
       require('lsp_signature').setup()
