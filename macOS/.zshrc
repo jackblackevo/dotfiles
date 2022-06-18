@@ -1,5 +1,8 @@
 export TERM="xterm-256color"
 
+# https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
+export PATH="$HOME/.local/bin:$PATH"
+
 alias vim="nvim"
 
 # 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援

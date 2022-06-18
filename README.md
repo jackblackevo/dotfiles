@@ -33,6 +33,15 @@
    ```bash
    defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
    ```
+8. Install [LunarVim](https://www.lunarvim.org/)
+   ```bash
+   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+   ```
+9. Configure LunarVim, install plugins
+   ```bash
+   curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
+   && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+   ```
 
 ## WSL - Ubuntu
 1. Install packages  
@@ -111,4 +120,13 @@
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
     && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ```
+13. Install [LunarVim](https://www.lunarvim.org/)
+    ```bash
+    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+    ```
+14. Configure LunarVim, install plugins
+    ```bash
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
+    && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
