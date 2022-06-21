@@ -21,7 +21,11 @@
    ```bash
    zsh
    ```
-6. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+6. Copy `.tmux.conf` file to home directory
+   ```bash
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
+   ```
+7. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
    ```bash
    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
@@ -29,19 +33,19 @@
    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
    ```
-7. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+8. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
    ```bash
    defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
    ```
-8. Install [LunarVim](https://www.lunarvim.org/)
+9. Install [LunarVim](https://www.lunarvim.org/)
    ```bash
    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
    ```
-9. Configure LunarVim, install plugins
-   ```bash
-   curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
-   && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-   ```
+10. Configure LunarVim, install plugins
+    ```bash
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
+    && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ```
 
 ## WSL - Ubuntu
 1. Install packages  
@@ -101,7 +105,11 @@
    ```bash
    chsh -s $(which zsh)
    ```
-10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
+10. Copy `.tmux.conf` file to home directory
+    ```bash
+    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
+    ```
+11. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
     See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
     ```bash
     curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
@@ -109,11 +117,11 @@
     chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin/
     ```
-11. Install Neovim v0.7.0
+12. Install Neovim v0.7.0
     ```bash
     curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
     ```
-12. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+13. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
@@ -121,11 +129,11 @@
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
     && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
-13. Install [LunarVim](https://www.lunarvim.org/)
+14. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
     ```
-14. Configure LunarVim, install plugins
+15. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

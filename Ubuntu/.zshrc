@@ -1,5 +1,3 @@
-export TERM="xterm-256color"
-
 # https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
 export PATH="$HOME/.local/bin:$PATH"
 
