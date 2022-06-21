@@ -158,6 +158,10 @@ lvim.plugins = {
     end,
   },
   {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
+  {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
     config = function()
