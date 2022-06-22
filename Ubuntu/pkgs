@@ -1,6 +1,7 @@
 g++
 git
 make
+ripgrep
 tig
 tldr
 unzip
