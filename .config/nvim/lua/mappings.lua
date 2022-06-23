@@ -14,6 +14,6 @@ if vim.g.vscode then
   vim.keymap.set('n', '<Space>', '<Cmd>call VSCodeNotify("whichkey.show")<CR>')
   vim.keymap.set('x', '<Space>', '<Cmd>call VSCodeNotifyVisual("whichkey.show", 1)<CR>')
 
-  vim.keymap.set('n', '<Tab>', 'gt', { remap = true })
-  vim.keymap.set('n', '<S-Tab>', 'gT', { remap = true })
+  vim.keymap.set('n', '<S-l>', 'gt', { remap = true })
+  vim.keymap.set('n', '<S-h>', 'gT', { remap = true })
 end
