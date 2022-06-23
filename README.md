@@ -52,25 +52,21 @@
    ```bash
    sudo apt update && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
    ```
-2. Install [fzf](https://github.com/junegunn/fzf#using-git)  
-   ```bash
-   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-   ```
-3. Install [Z](https://github.com/rupa/z)  
+2. Install [Z](https://github.com/rupa/z)  
    ```bash
    curl -fsSLO --create-dirs --output-dir ~/.local/etc/profile.d/ https://raw.githubusercontent.com/rupa/z/master/z.sh
    ```
-4. Copy `.zshrc` file to home directory  
+3. Copy `.zshrc` file to home directory  
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc
    ```
-5. Reload Zsh configuration  
+4. Reload Zsh configuration  
    ```bash
    zsh
    ```
-6. Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)  
+5. Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)  
    Hack Regular Nerd Font Complete Mono Windows Compatible.ttf
-7. Configure Windows Terminal
+6. Configure Windows Terminal
    ```jsonc
    {
        // actions
@@ -97,27 +93,27 @@
        "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\jackblackevo"
    }
    ```
-8. Set Zsh as default shell
+7. Set Zsh as default shell
    ```bash
    chsh -s $(which zsh)
    ```
-9. Copy `.tmux.conf` file to home directory
+8. Copy `.tmux.conf` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
    ```
-10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
-    See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
-    ```bash
-    curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
-    unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-    chmod +x /tmp/win32yank.exe
-    sudo mv /tmp/win32yank.exe /usr/local/bin/
-    ```
-11. Install Neovim v0.7.0
+9. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
+   See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
+   ```bash
+   curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+   unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+   chmod +x /tmp/win32yank.exe
+   sudo mv /tmp/win32yank.exe /usr/local/bin/
+   ```
+10. Install Neovim v0.7.0
     ```bash
     curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
     ```
-12. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+11. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
@@ -125,11 +121,11 @@
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
     && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
-13. Install [LunarVim](https://www.lunarvim.org/)
+12. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
     ```
-14. Configure LunarVim, install plugins
+13. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
