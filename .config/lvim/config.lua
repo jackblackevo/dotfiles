@@ -147,6 +147,11 @@ linters.setup {
   { command = "eslint_d" }
 }
 
+local code_actions = require "lvim.lsp.null-ls.code_actions"
+code_actions.setup {
+  { command = "eslint_d" }
+}
+
 -- Additional Plugins
 lvim.plugins = {
   --     {"folke/tokyonight.nvim"},
