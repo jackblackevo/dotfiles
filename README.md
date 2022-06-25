@@ -7,7 +7,7 @@
    ```
 2. Install all dependencies from the `Brewfile` through [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand)
    ```bash
-   curl -fsSLO --output-dir /tmp/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile && brew bundle --file /tmp/Brewfile ; rm /tmp/Brewfile
+   curl -fsSLO --output-dir /tmp/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile && brew bundle --file /tmp/Brewfile && rm /tmp/Brewfile
    ```
 3. Copy `.zshrc` file to home directory
    ```bash
