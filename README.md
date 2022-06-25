@@ -94,7 +94,6 @@
        {
            "face": "Hack NF"
        },
-       "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\jackblackevo"
    }
    ```
 7. Set Zsh as default shell
