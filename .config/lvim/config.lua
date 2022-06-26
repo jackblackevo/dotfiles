@@ -184,10 +184,6 @@ lvim.plugins = {
     end,
   },
   {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    event = "BufRead",
-  },
-  {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "*" }, {
