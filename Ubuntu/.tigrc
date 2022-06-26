@@ -1,0 +1,10 @@
+# https://github.com/jonas/tig/wiki/Bindings
+bind main B !git rebase -i %(commit)
+bind main ! !git revert %(commit)
+
+# https://jonas.github.io/tig/doc/manual.html
+bind generic I !git add -i %(file)
+
+# https://jonas.github.io/tig/doc/tigrc.5.html#_advanced_shell_like_commands
+# https://stackoverflow.com/questions/52542803/take-sha-number-of-commit-by-tig
+bind generic 9 @sh -c "echo -n %(commit) | win32yank.exe -i"
