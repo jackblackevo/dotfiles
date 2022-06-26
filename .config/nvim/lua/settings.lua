@@ -7,3 +7,6 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'yes'
+vim.opt.list = true
+vim.opt.listchars:append("tab:»·")
+vim.opt.listchars:append("trail:·")
