@@ -1,3 +1,6 @@
+# https://github.com/jonas/tig/issues/313#issuecomment-792701628
+set diff-highlight = true
+
 # https://github.com/jonas/tig/wiki/Bindings
 bind main B !git rebase -i %(commit)
 bind main ! !git revert %(commit)
