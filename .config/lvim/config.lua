@@ -14,6 +14,9 @@ lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 vim.opt.undofile = false
 vim.opt.relativenumber = true
+vim.opt.list = true
+vim.opt.listchars:append("tab:»·")
+vim.opt.listchars:append("trail:·")
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
