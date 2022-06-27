@@ -134,9 +134,9 @@
     ```bash
     curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.tigrc
     ```
-12. Install Neovim v0.7.0
+12. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
-    curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
+    curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
     ```
 13. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
