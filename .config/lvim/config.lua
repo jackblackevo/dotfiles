@@ -98,6 +98,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
+-- https://github.com/LunarVim/LunarVim/issues/2313#issuecomment-1053635797
+require("lvim.lsp.manager").setup("tsserver", {
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+  end
+})
+
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
 -- vim.tbl_map(function(server)
