@@ -67,6 +67,13 @@ lvim.builtin.which_key.mappings["S"] = {
 lvim.builtin.which_key.mappings["r"] = {
   "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:.'))<cr>", "Copy relative path"
 }
+lvim.builtin.which_key.mappings["d"] = {
+  name = "Diffview",
+  c = { "<cmd>DiffviewClose<cr>", "Close the current diffview" },
+  e = { "<cmd>DiffviewToggleFiles<cr>", "Files panel" },
+  h = { "<cmd>DiffviewFileHistory<cr>", "File History" },
+  H = { "<cmd>DiffviewFileHistory %<cr>", "File History(for current file)" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
