@@ -64,6 +64,9 @@ lvim.builtin.which_key.mappings["S"] = {
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
+lvim.builtin.which_key.mappings["r"] = {
+  "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:.'))<cr>", "Copy relative path"
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
