@@ -275,6 +275,10 @@ lvim.plugins = {
     -- setup = function()
     --  vim.o.timeoutlen = 500
     -- end
+  },
+  {
+    'mg979/vim-visual-multi',
+    branch = 'master'
   }
 }
 
