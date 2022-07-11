@@ -184,6 +184,7 @@ lvim.plugins = {
   --     {"folke/tokyonight.nvim"},
   {
     "phaazon/hop.nvim",
+    branch = 'v2',
     event = "BufRead",
     config = function()
       require("hop").setup()
