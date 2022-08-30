@@ -139,12 +139,18 @@ return require('packer').startup(function(use)
         })
       end
     },
-    'williamboman/nvim-lsp-installer',
+    'williamboman/mason-lspconfig.nvim',
+    {
+      'williamboman/mason.nvim',
+      config = function()
+        require('mason').setup()
+      end
+    },
     'hrsh7th/cmp-nvim-lsp',
     {
       'neovim/nvim-lspconfig',
       config = function()
-        require('nvim-lsp-installer').setup({
+        require('mason-lspconfig').setup({
           automatic_installation = true
         })
 
