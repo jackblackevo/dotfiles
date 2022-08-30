@@ -225,7 +225,7 @@ return require('packer').startup(function(use)
     as = 'catppuccin',
     config = function()
       require('catppuccin').setup()
-      vim.g.catppuccin_flavour = 'dusk'
+      vim.g.catppuccin_flavour = 'frappe'
       vim.cmd[[colorscheme catppuccin]]
     end,
     cond = check_not_vscode
