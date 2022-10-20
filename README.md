@@ -52,7 +52,7 @@
     ```
 12. Configure LunarVim, install plugins
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
 13. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
@@ -157,7 +157,7 @@
     ```
 16. Configure LunarVim, install plugins
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/lvim/config.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
 17. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
