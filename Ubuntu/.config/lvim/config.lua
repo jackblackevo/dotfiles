@@ -22,8 +22,8 @@ vim.g.clipboard = {
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.format_on_save.enabled = true
+lvim.colorscheme = "lunar"
 vim.opt.undofile = false
 vim.opt.relativenumber = true
 vim.opt.list = true
