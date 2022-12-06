@@ -23,7 +23,7 @@ vim.opt.relativenumber = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = "*.lua",
+  pattern = "*.lua,*.js,*.jsx,*.ts,*tsx,*json",
   timeout = 1000,
 }
 vim.opt.undofile = false
