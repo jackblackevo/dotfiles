@@ -115,7 +115,7 @@ formatters.setup {
   -- { command = "stylua" },
   --   {
   --     command = "prettier",
-  --     extra_args = { "--print-with", "100" },
+  --     extra_args = { "--print-width", "100" },
   --     filetypes = { "typescript", "typescriptreact" },
   --   },
   { command = "eslint_d" }
