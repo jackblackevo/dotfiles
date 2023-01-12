@@ -101,7 +101,8 @@ lvim.builtin.treesitter.rainbow.enable = true
 -- https://github.com/LunarVim/LunarVim/issues/2313#issuecomment-1053635797
 require("lvim.lsp.manager").setup("tsserver", {
   on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
+    -- https://github.com/neovim/nvim-lspconfig/issues/1891#issuecomment-1157964108
+    client.server_capabilities.documentFormattingProvider = false
   end
 })
 
