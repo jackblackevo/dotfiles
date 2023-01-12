@@ -98,14 +98,6 @@ lvim.builtin.treesitter.rainbow.enable = true
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
--- https://github.com/LunarVim/LunarVim/issues/2313#issuecomment-1053635797
-require("lvim.lsp.manager").setup("tsserver", {
-  on_attach = function(client)
-    -- https://github.com/neovim/nvim-lspconfig/issues/1891#issuecomment-1157964108
-    client.server_capabilities.documentFormattingProvider = false
-  end
-})
-
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
