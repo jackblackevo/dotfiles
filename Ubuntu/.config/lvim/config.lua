@@ -60,9 +60,6 @@ lvim.builtin.which_key.mappings["S"] = {
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
-lvim.builtin.which_key.mappings["r"] = {
-  "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:.'))<cr>", "Copy relative path"
-}
 lvim.builtin.which_key.mappings["D"] = {
   name = "Diffview",
   c = { "<cmd>DiffviewClose<cr>", "Close the current diffview" },
