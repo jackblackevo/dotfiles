@@ -193,6 +193,16 @@ lvim.plugins = {
         -- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
         -- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
       }
+
+      -- label
+      require("which-key").register {
+        gp = "Goto Preview",
+        gpd = "Definition",
+        gpt = "Type Definition",
+        gpi = "Implementation",
+        gP = "Close All Windows",
+        gpr = "References"
+      }
     end
   },
   {
