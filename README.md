@@ -110,7 +110,7 @@
             },
        ],
        // profiles.list
-       "colorScheme": "Solarized Dark",
+       "colorScheme": "One Half Dark",
        "font":
        {
            "face": "Hack NF"
