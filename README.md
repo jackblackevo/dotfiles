@@ -9,53 +9,57 @@
    ```bash
    curl -fsSLO --output-dir /tmp/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile && brew bundle --file /tmp/Brewfile && rm /tmp/Brewfile
    ```
-3. Copy `.zshrc` file to home directory
+3. Configure [Alacritty](https://alacritty.org/)
+   ```bash
+   curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/alacritty/alacritty.yml
+   ```
+4. Copy `.zshrc` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.zshrc
    ```
-4. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew)
+5. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew)
    ```bash
    $(brew --prefix)/opt/fzf/install
    ```
-5. Reload Zsh configuration
+6. Reload Zsh configuration
    ```bash
    zsh
    ```
-6. Copy `.tmux.conf` file to home directory
+7. Copy `.tmux.conf` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
    ```
-7. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
+8. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
    ```bash
    curl -fsSLO --create-dirs --output-dir ~/.local/bin https://raw.githubusercontent.com/git/git/v2.13.2/contrib/diff-highlight/diff-highlight \
    && chmod +x ~/.local/bin/diff-highlight
    ```
-8. Copy `.tigrc` file to home directory
+9. Copy `.tigrc` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.tigrc
    ```
-9. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
-   ```bash
-   curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
-   && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
-   && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
-   && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
-   && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-   ```
-10. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+10. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+    ```bash
+    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
+    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ```
+11. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
     ```bash
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     ```
-11. Install [LunarVim](https://www.lunarvim.org/)
+12. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
     ```
-12. Configure LunarVim, install plugins
+13. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
-13. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+14. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
     ```bash
     npm install -g eslint_d
     ```
