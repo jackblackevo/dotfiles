@@ -44,5 +44,8 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='$ '
 
+# https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
+FZ_HISTORY_CD_CMD=zshz
+
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh

@@ -69,25 +69,21 @@
    ```bash
    sudo apt update && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
    ```
-2. Install [Z](https://github.com/rupa/z)  
-   ```bash
-   curl -fsSLO --create-dirs --output-dir ~/.local/etc/profile.d/ https://raw.githubusercontent.com/rupa/z/master/z.sh
-   ```
-3. Copy `.zshrc` file to home directory  
+2. Copy `.zshrc` file to home directory  
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc
    ```
-4. Reload Zsh configuration  
+3. Reload Zsh configuration  
    ```bash
    zsh
    ```
-5. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+4. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
    ```bash
    curl -fLo "Hack Regular Nerd Font Complete Mono Windows Compatible.ttf" \
    https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf \
    && explorer.exe .
    ```
-6. Configure Windows Terminal
+5. Configure Windows Terminal
    ```jsonc
    {
        // actions
@@ -113,15 +109,15 @@
        },
    }
    ```
-7. Set Zsh as default shell
+6. Set Zsh as default shell
    ```bash
    chsh -s $(which zsh)
    ```
-8. Copy `.tmux.conf` file to home directory
+7. Copy `.tmux.conf` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
    ```
-9. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
+8. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
    See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
    ```bash
    curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
@@ -129,25 +125,25 @@
    chmod +x /tmp/win32yank.exe
    sudo mv /tmp/win32yank.exe /usr/local/bin/
    ```
-10. Install [im-select](https://github.com/daipeihust/im-select#manual-download)
-    ```bash
-    curl -fsSLo ~/.local/bin/im-select --create-dirs https://github.com/daipeihust/im-select/raw/master/im-select-win/out/x64/im-select.exe \
-    && chmod +x ~/.local/bin/im-select
-    ```
-11. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
+9. Install [im-select](https://github.com/daipeihust/im-select#manual-download)
+   ```bash
+   curl -fsSLo ~/.local/bin/im-select --create-dirs https://github.com/daipeihust/im-select/raw/master/im-select-win/out/x64/im-select.exe \
+   && chmod +x ~/.local/bin/im-select
+   ```
+10. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.local/bin https://raw.githubusercontent.com/git/git/v2.13.2/contrib/diff-highlight/diff-highlight \
     && chmod +x ~/.local/bin/diff-highlight
     ```
-12. Copy `.tigrc` file to home directory
+11. Copy `.tigrc` file to home directory
     ```bash
     curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.tigrc
     ```
-13. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
+12. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
     curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
     ```
-14. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+13. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
@@ -155,20 +151,20 @@
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
     && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
-15. Install [LunarVim](https://www.lunarvim.org/)
+14. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
     ```
-16. Configure LunarVim, install plugins
+15. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/lvim/config.lua \
     && lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     ```
-17. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+16. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
     ```bash
     npm install -g eslint_d
     ```
-18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
+17. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
     curl -fsSLo cloudflared.deb --output-dir /tmp/ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i /tmp/cloudflared.deb ; rm /tmp/cloudflared.deb
     ```
