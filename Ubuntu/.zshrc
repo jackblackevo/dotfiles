@@ -18,7 +18,7 @@ antigen use oh-my-zsh
 # antigen theme robbyrussell
 
 # 透過 Antigen 使用其他 Zsh theme
-antigen theme bhilburn/powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 # 透過 Antigen 使用 Oh My Zsh 內建 plug-ins
 antigen bundle git
