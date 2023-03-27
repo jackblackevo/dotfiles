@@ -128,3 +128,27 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+# https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
+export PATH="$HOME/.local/bin:$PATH"
+
+alias vim="nvim"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+# 修改提示字顏色
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='$ '
+
+# https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
+FZ_HISTORY_CD_CMD=zshz
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
