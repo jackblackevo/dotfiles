@@ -184,13 +184,13 @@ lvim.plugins = {
   },
   {
     "tzachar/cmp-tabnine",
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
+    build = "./install.sh",
+    dependencies = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
   },
   {
     "codota/tabnine-nvim",
-    run = "./dl_binaries.sh",
+    build = "./dl_binaries.sh",
     config = function()
       require("tabnine").setup({
         disable_auto_comment = true,
@@ -242,7 +242,6 @@ lvim.plugins = {
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    module = "persistence",
     config = function()
       require("persistence").setup {
         dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
