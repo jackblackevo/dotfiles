@@ -187,9 +187,11 @@ return require('packer').startup(function(use)
   }
   use {
     'glepnir/lspsaga.nvim',
+    opt = true,
     branch = 'main',
+    event = 'LspAttach',
     config = function()
-      require('lspsaga').init_lsp_saga()
+      require('lspsaga').setup({})
 
       vim.keymap.set('n', 'gh', function() require('lspsaga.provider').lsp_finder() end)
       vim.keymap.set('n', 'ca', function() require('lspsaga.codeaction').code_action() end)
@@ -205,6 +207,11 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', '<A-d>', function() require('lspsaga.floaterm').open_float_terminal() end)
       vim.keymap.set('t', '<A-d>', '<C-\\><C-n>:lua require("lspsaga.floaterm").close_float_terminal()<CR>')
     end,
+    requires = {
+      { 'nvim-tree/nvim-web-devicons' },
+      --Please make sure you install markdown and markdown_inline parser
+      { 'nvim-treesitter/nvim-treesitter' }
+    },
     cond = check_not_vscode
   }
   use {
