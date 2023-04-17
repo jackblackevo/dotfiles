@@ -161,7 +161,7 @@ return require('packer').startup(function(use)
         lspconfig.tsserver.setup({
           capabilities = capabilities
         })
-        lspconfig.sumneko_lua.setup({
+        lspconfig.lua_ls.setup({
           capabilities = capabilities
         })
         lspconfig.eslint.setup({
