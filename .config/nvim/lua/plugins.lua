@@ -1,28 +1,27 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-
-local packer_bootstrap = ensure_packer()
+vim.opt.rtp:prepend(lazypath)
 
 local check_not_vscode = function()
   return not vim.g.vscode
 end
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use {
-    'mg979/vim-visual-multi',
+require("lazy").setup({
+  {
+    "mg979/vim-visual-multi",
     branch = 'master'
-  }
-  use {
-    'tpope/vim-surround',
+  },
+  {
+    "tpope/vim-surround",
     config = function()
       vim.keymap.set('n', 'ds', '<Plug>Dsurround')
       vim.keymap.set('n', 'cs', '<Plug>Csurround')
@@ -35,167 +34,176 @@ return require('packer').startup(function(use)
       vim.keymap.set('x', 'gs', '<Plug>VSurround')
       vim.keymap.set('x', 'gS', '<Plug>VgSurround')
     end,
-    setup = function()
+    init = function()
       vim.g.surround_no_mappings = 1
     end
-  }
-  use {
-    'numToStr/Comment.nvim',
+  },
+  {
+    "numToStr/Comment.nvim",
     config = function()
       require('Comment').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'ggandor/lightspeed.nvim',
+  },
+  {
+    "ggandor/lightspeed.nvim",
     config = function()
       if vim.g.vscode then
         vim.api.nvim_set_hl(0, 'LightspeedCursor', { reverse = true })
       end
     end
-  }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
     config = function()
       require('lualine').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'lewis6991/gitsigns.nvim',
+  },
+  {
+    "lewis6991/gitsigns.nvim",
     config = function()
       require('gitsigns').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'folke/which-key.nvim',
+  },
+  {
+    "folke/which-key.nvim",
     config = function()
       require('which-key').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'rcarriga/nvim-notify',
+  },
+  {
+    "rcarriga/nvim-notify",
     cond = check_not_vscode
-  }
-  use {
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
-    'onsails/lspkind.nvim',
-    {
-      'hrsh7th/nvim-cmp',
-      config = function()
-        local cmp = require('cmp')
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    -- load cmp on InsertEnter
+    event = "InsertEnter",
+    -- these dependencies will only be loaded when cmp loads
+    -- dependencies are always lazy-loaded unless specified otherwise
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+      'onsails/lspkind.nvim',
+    },
+    config = function()
+      local cmp = require('cmp')
 
-        vim.opt.completeopt = 'menu,menuone,noselect'
-        cmp.setup({
-          snippet = {
-            expand = function(args)
-              vim.fn['vsnip#anonymous'](args.body)
-            end
-          },
-          mapping = cmp.mapping.preset.insert({
-            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<C-e>'] = cmp.mapping.abort(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ['<Tab>'] = cmp.mapping(function(fallback)
-              if cmp.visible() then
-                local entry = cmp.get_selected_entry()
-                if not entry then
-                  cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-                else
-                  cmp.confirm()
-                end
+      vim.opt.completeopt = 'menu,menuone,noselect'
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn['vsnip#anonymous'](args.body)
+          end
+        },
+        mapping = cmp.mapping.preset.insert({
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              local entry = cmp.get_selected_entry()
+              if not entry then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
               else
-                fallback()
+                cmp.confirm()
               end
-            end, { 'i', 's', 'c' })
-          }),
-          sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            { name = 'vsnip' }
-          }, {
-            { name = 'buffer' }
-          }),
-          formatting = {
-            format = require('lspkind').cmp_format()
-          }
-        })
+            else
+              fallback()
+            end
+          end, { 'i', 's', 'c' })
+        }),
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' }
+        }, {
+          { name = 'buffer' }
+        }),
+        formatting = {
+          format = require('lspkind').cmp_format()
+        }
+      })
 
-        cmp.setup.cmdline('/', {
-          mapping = cmp.mapping.preset.cmdline(),
-          sources = {
-            { name = 'buffer' }
-          }
-        })
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
 
-        cmp.setup.cmdline(':', {
-          mapping = cmp.mapping.preset.cmdline(),
-          sources = cmp.config.sources({
-            { name = 'path' }
-          }, {
-            { name = 'cmdline' }
-          })
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
         })
-      end
-    },
-    'williamboman/mason-lspconfig.nvim',
-    {
-      'williamboman/mason.nvim',
-      config = function()
-        require('mason').setup()
-      end
-    },
-    'hrsh7th/cmp-nvim-lsp',
-    {
-      'neovim/nvim-lspconfig',
-      config = function()
-        require('mason-lspconfig').setup({
-          automatic_installation = true
-        })
-
-        local lspconfig = require('lspconfig')
-        local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-        lspconfig.tsserver.setup({
-          capabilities = capabilities
-        })
-        lspconfig.lua_ls.setup({
-          capabilities = capabilities
-        })
-        lspconfig.eslint.setup({
-          capabilities = capabilities
-        })
-      end
-    },
+      })
+    end,
     cond = check_not_vscode
-  }
-  use {
-    'j-hui/fidget.nvim',
+  },
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    config = function()
+      require('mason').setup()
+    end,
+    cond = check_not_vscode
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig"
+    },
+    config = function()
+      require('mason-lspconfig').setup({
+        automatic_installation = true
+      })
+
+      local lspconfig = require('lspconfig')
+      local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+      lspconfig.tsserver.setup({
+        capabilities = capabilities
+      })
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.eslint.setup({
+        capabilities = capabilities
+      })
+    end,
+    cond = check_not_vscode
+  },
+  {
+    "j-hui/fidget.nvim",
     config = function()
       require('fidget').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'ray-x/lsp_signature.nvim',
+  },
+  {
+    "ray-x/lsp_signature.nvim",
     config = function()
       require('lsp_signature').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'glepnir/lspsaga.nvim',
-    opt = true,
-    branch = 'main',
-    event = 'LspAttach',
+  },
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
     config = function()
       require('lspsaga').setup({})
 
@@ -213,23 +221,23 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', '<A-d>', function() require('lspsaga.floaterm').open_float_terminal() end)
       vim.keymap.set('t', '<A-d>', '<C-\\><C-n>:lua require("lspsaga.floaterm").close_float_terminal()<CR>')
     end,
-    requires = {
-      { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
-      { 'nvim-treesitter/nvim-treesitter' }
+      { "nvim-treesitter/nvim-treesitter" }
     },
     cond = check_not_vscode
-  }
-  use {
-    'windwp/nvim-autopairs',
+  },
+  {
+    "windwp/nvim-autopairs",
     config = function()
       require('nvim-autopairs').setup()
     end,
     cond = check_not_vscode
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     config = function()
       require('nvim-treesitter.configs').setup({
         ensure_installed = { 'lua', 'json', 'html', 'css', 'javascript', 'typescript', 'tsx' },
@@ -237,19 +245,19 @@ return require('packer').startup(function(use)
       })
     end,
     cond = check_not_vscode
-  }
-  use {
-    'catppuccin/nvim',
-    as = 'catppuccin',
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
     config = function()
       require('catppuccin').setup()
       vim.g.catppuccin_flavour = 'frappe'
       vim.cmd [[colorscheme catppuccin]]
     end,
     cond = check_not_vscode
-  }
-  use {
-    'lukas-reineke/indent-blankline.nvim',
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
       require('indent_blankline').setup({
         show_current_context = true,
@@ -257,18 +265,18 @@ return require('packer').startup(function(use)
       })
     end,
     cond = check_not_vscode
-  }
-  use {
-    'norcalli/nvim-colorizer.lua',
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
     config = function()
       require('colorizer').setup({ '*' }, { css = true })
     end,
     cond = check_not_vscode
-  }
-  use {
-    'akinsho/bufferline.nvim',
-    tag = 'v2.*',
-    requires = 'kyazdani42/nvim-web-devicons',
+  },
+  {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       vim.opt.termguicolors = true
 
@@ -286,10 +294,10 @@ return require('packer').startup(function(use)
       })
     end,
     cond = check_not_vscode
-  }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('nvim-tree').setup()
 
@@ -298,10 +306,11 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', '<leader>n', '<Cmd>NvimTreeFindFile<CR>')
     end,
     cond = check_not_vscode
-  }
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = 'nvim-lua/plenary.nvim',
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    version = '0.1.1',
+    dependencies = "nvim-lua/plenary.nvim",
     config = function()
       vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end)
       vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end)
@@ -310,10 +319,4 @@ return require('packer').startup(function(use)
     end,
     cond = check_not_vscode
   }
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+})

@@ -42,13 +42,13 @@
     ```bash
     curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.tigrc
     ```
-11. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+11. Configure Neovim, install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
-    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    && nvim --headless "+Lazy! sync" +qa
     ```
 12. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
     ```bash
@@ -151,13 +151,13 @@
     ```bash
     curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
     ```
-14. Configure Neovim, install plugins via [packer.nvim](https://github.com/wbthomason/packer.nvim#bootstrapping)
+14. Configure Neovim, install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
-    && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    && nvim --headless "+Lazy! sync" +qa
     ```
 15. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
