@@ -1,6 +1,14 @@
 # https://github.com/jonas/tig/issues/313#issuecomment-792701628
 set diff-highlight = true
 
+# https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
+# https://www.ditig.com/256-colors-cheat-sheet
+
+# https://github.com/jonas/tig/blob/06a1b89d98f32e9ac2d81b94515b200b0acb7dbb/tigrc#L405
+color cursor black green bold
+# https://github.com/jonas/tig/blob/06a1b89d98f32e9ac2d81b94515b200b0acb7dbb/tigrc#L420
+color title-focus black blue bold
+
 # https://github.com/jonas/tig/wiki/Bindings
 bind main B !git rebase -i %(commit)
 bind main ! !git revert %(commit)
