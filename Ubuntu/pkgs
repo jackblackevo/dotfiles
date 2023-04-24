@@ -2,6 +2,7 @@ ack
 fzf
 g++
 git
+libfuse2
 make
 ripgrep
 tig

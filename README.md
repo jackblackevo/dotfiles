@@ -149,7 +149,7 @@
     ```
 13. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
-    curl -fsSLO --output-dir /tmp/ https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb && sudo apt install /tmp/nvim-linux64.deb ; rm /tmp/nvim-linux64.deb
+    curl -fsSLO --create-dirs --output-dir ~/.local/bin https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && chmod u+x ~/.local/bin/nvim.appimage && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
 14. Configure Neovim, install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
