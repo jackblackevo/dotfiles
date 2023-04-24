@@ -87,9 +87,9 @@
    ```
 5. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
    ```bash
-   curl -fLo "Hack Regular Nerd Font Complete Mono Windows Compatible.ttf" \
-   https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf \
-   && explorer.exe .
+   curl -fsSLo /mnt/c/temp/"Hack Regular Nerd Font Complete Mono Windows Compatible.ttf" \
+   https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf \
+   && explorer.exe "c:\temp"
    ```
 6. Configure Windows Terminal
    ```jsonc
@@ -113,7 +113,7 @@
        "colorScheme": "One Half Dark",
        "font":
        {
-           "face": "Hack NF"
+           "face": "Hack NFM"
        },
    }
    ```
