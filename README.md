@@ -133,9 +133,9 @@
    chmod +x /tmp/win32yank.exe
    sudo mv /tmp/win32yank.exe /usr/local/bin/
    ```
-10. Install [im-select](https://github.com/daipeihust/im-select#manual-download)
+10. Install [im-select](https://github.com/daipeihust/im-select#windows)
     ```bash
-    curl -fsSLo ~/.local/bin/im-select --create-dirs https://github.com/daipeihust/im-select/raw/master/im-select-win/out/x64/im-select.exe \
+    curl -fsSLo ~/.local/bin/im-select --create-dirs https://github.com/daipeihust/im-select/raw/master/win/out/x64/im-select.exe \
     && chmod +x ~/.local/bin/im-select
     ```
 11. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
