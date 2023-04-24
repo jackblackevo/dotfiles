@@ -56,7 +56,7 @@
     ```
 13. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
-    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
     ```
 14. Configure LunarVim, install plugins
     ```bash
@@ -161,7 +161,7 @@
     ```
 15. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
-    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
     ```
 16. Configure LunarVim, install plugins
     ```bash
