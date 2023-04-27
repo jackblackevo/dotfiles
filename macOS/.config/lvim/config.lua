@@ -109,7 +109,7 @@ require("lvim.lsp.manager").setup("tsserver", {
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+-- -- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   -- { command = "stylua" },
@@ -129,10 +129,12 @@ linters.setup {
   --   },
   { command = "eslint_d" }
 }
-
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
-  { command = "eslint_d" }
+  {
+    exe = "eslint_d",
+    filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  },
 }
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
