@@ -144,8 +144,8 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "f", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "F", ":HopWord<cr>", { silent = true })
     end,
   },
   {
@@ -259,12 +259,11 @@ lvim.plugins = {
     end,
   },
   {
-    "tpope/vim-surround",
-    keys = { "c", "d", "y" }
-    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-    -- setup = function()
-    --  vim.o.timeoutlen = 500
-    -- end
+    'echasnovski/mini.surround',
+    version = false,
+    config = function()
+      require('mini.surround').setup()
+    end
   },
   {
     'mg979/vim-visual-multi',
