@@ -92,6 +92,14 @@ require("lvim.lsp.manager").setup("tsserver", {
     }
   }
 })
+require("lvim.lsp.manager").setup("stylelint_lsp", {
+  settings = {
+    stylelintplus = {
+      autoFixOnSave = true,
+      autoFixOnFormat = true
+    }
+  }
+})
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
