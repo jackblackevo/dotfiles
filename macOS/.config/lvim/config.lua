@@ -274,12 +274,8 @@ lvim.plugins = {
     end
   },
   {
-    'otavioschwanck/cool-substitute.nvim',
-    config = function()
-      require('cool-substitute').setup({
-        setup_keybindings = true,
-      })
-    end
+    'mg979/vim-visual-multi',
+    branch = 'master'
   },
   {
     'brglng/vim-im-select'
