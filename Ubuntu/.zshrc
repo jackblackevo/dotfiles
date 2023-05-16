@@ -128,6 +128,8 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+export TERM=screen-256color
+
 # https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
 export PATH="$HOME/.local/bin:$PATH"
 
