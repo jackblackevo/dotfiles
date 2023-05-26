@@ -135,6 +135,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias vim="nvim"
 
+# https://github.com/jonas/tig/issues/559#issuecomment-456223819
+alias tig='TERM=xterm-256color tig'
+
 # 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援
 POWERLEVEL9K_MODE='nerdfont-complete'
 
