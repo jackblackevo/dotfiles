@@ -316,7 +316,7 @@ lvim.plugins = {
         { noremap = true, silent = true, expr = false, desc = 'Refactoring - Inline Variable' })
 
       -- Extract block doesn't need visual mode
-      vim.api.nvim_set_keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
+      vim.api.nvim_set_keymap("n", "<leader>rbb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
         { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Block' })
       vim.api.nvim_set_keymap("n", "<leader>rbf",
         [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
