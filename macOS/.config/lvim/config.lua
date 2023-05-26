@@ -279,6 +279,49 @@ lvim.plugins = {
   },
   {
     'brglng/vim-im-select'
+  },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
+    },
+    config = function()
+      require('refactoring').setup({})
+
+      -- Remaps for the refactoring operations currently offered by the plugin
+      vim.api.nvim_set_keymap("v", "<leader>re",
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Function' })
+      vim.api.nvim_set_keymap("v", "<leader>rf",
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Function To File' })
+      vim.api.nvim_set_keymap("v", "<leader>rv",
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Variable' })
+      vim.api.nvim_set_keymap("v", "<leader>ri",
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Inline Variable' })
+
+      -- Extract block doesn't need visual mode
+      vim.api.nvim_set_keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Block' })
+      vim.api.nvim_set_keymap("n", "<leader>rbf",
+        [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Block To File' })
+
+      -- Inline variable can also pick up the identifier currently under the cursor without visual mode
+      vim.api.nvim_set_keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Inline Variable' })
+
+      -- prompt for a refactor to apply when the remap is triggered
+      vim.api.nvim_set_keymap(
+        "v",
+        "<leader>rr",
+        ":lua require('refactoring').select_refactor()<CR>",
+        { noremap = true, silent = true, expr = false, desc = 'Select Refactor' }
+      )
+    end
   }
 }
 
