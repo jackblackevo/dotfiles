@@ -63,10 +63,6 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
     ```
-15. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-    ```bash
-    npm install -g eslint_d
-    ```
 
 ## WSL - Ubuntu
 1. Install packages  
@@ -168,11 +164,7 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
     ```
-17. Install [eslint_d](https://github.com/mantoni/eslint_d.js) for [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-    ```bash
-    npm install -g eslint_d
-    ```
-18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
+17. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
     curl -fsSLo cloudflared.deb --output-dir /tmp/ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i /tmp/cloudflared.deb ; rm /tmp/cloudflared.deb
     ```
