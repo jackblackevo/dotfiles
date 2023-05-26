@@ -145,10 +145,6 @@ alias vim="nvim"
 # https://github.com/jonas/tig/issues/559#issuecomment-456223819
 alias tig='TERM=xterm-256color tig'
 
-
-# 修改提示字顏色
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
 # https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
 FZ_HISTORY_CD_CMD=zshz
 
