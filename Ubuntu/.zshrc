@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -140,20 +147,15 @@ export EDITOR="$VISUAL"
 # https://github.com/jonas/tig/issues/559#issuecomment-456223819
 alias tig='TERM=xterm-256color tig'
 
-# 開啟 Powerlevel9k 主題對 Nerd Fonts 字型的支援
-POWERLEVEL9K_MODE='nerdfont-complete'
 
 # 修改提示字顏色
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='$ '
 
 # https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
 FZ_HISTORY_CD_CMD=zshz
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
