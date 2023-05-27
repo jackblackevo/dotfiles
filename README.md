@@ -7,23 +7,23 @@
    ```
 2. Install all dependencies from the `Brewfile` through [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand)
    ```bash
-   curl -fsSLO --output-dir /tmp/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/Brewfile && brew bundle --file /tmp/Brewfile && rm /tmp/Brewfile
+   curl -fsSLO --output-dir /tmp/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/Brewfile && brew bundle --file /tmp/Brewfile && rm /tmp/Brewfile
    ```
 3. Configure [Alacritty](https://alacritty.org/)
    ```bash
-   curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/alacritty/alacritty.yml
+   curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/alacritty/alacritty.yml
    ```
 4. Copy `.zshrc` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.zshrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zshrc
    ```
 5. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.zimrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc
    ```
 6. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.p10k.zsh
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
 7. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew)
    ```bash
@@ -35,7 +35,7 @@
    ```
 9. Copy `.tmux.conf` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
 10. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
     ```bash
@@ -44,14 +44,14 @@
     ```
 11. Copy `.tigrc` file to home directory
     ```bash
-    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.tigrc
+    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
     ```
 12. Configure Neovim, install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
-    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/plugins.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/mappings.lua \
     && nvim --headless "+Lazy! sync" +qa
     ```
 13. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
@@ -64,26 +64,26 @@
     ```
 15. Configure LunarVim, install plugins
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.config/lvim/config.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
     ```
 
 ## WSL - Ubuntu
 1. Install packages  
    ```bash
-   sudo apt update && curl -fsSL https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/pkgs | xargs sudo apt install -y
+   sudo apt update && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y
    ```
 2. Copy `.zshrc` file to home directory  
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zshrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshrc
    ```
 3. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.zimrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc
    ```
 4. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.p10k.zsh
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
 5. Reload Zsh configuration  
    ```bash
@@ -126,7 +126,7 @@
    ```
 9. Copy `.tmux.conf` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.tmux.conf
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
 10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
     See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
@@ -149,7 +149,7 @@
     ```
 13. Copy `.tigrc` file to home directory
     ```bash
-    curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.tigrc
+    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tigrc
     ```
 14. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
@@ -157,10 +157,10 @@
     ```
 15. Configure Neovim, install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/init.lua \
-    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/plugins.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/settings.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.config/nvim/lua/mappings.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/plugins.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/mappings.lua \
     && nvim --headless "+Lazy! sync" +qa
     ```
 16. Install [LunarVim](https://www.lunarvim.org/)
@@ -169,7 +169,7 @@
     ```
 17. Configure LunarVim, install plugins
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.config/lvim/config.lua \
+    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
     ```
 18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
