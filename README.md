@@ -19,7 +19,7 @@
    ```
 5. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.zimrc
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.zimrc
    ```
 6. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
@@ -79,7 +79,7 @@
    ```
 3. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.zimrc
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.zimrc
    ```
 4. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
