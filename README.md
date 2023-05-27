@@ -23,7 +23,7 @@
    ```
 6. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/macOS/.p10k.zsh
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.p10k.zsh
    ```
 7. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew)
    ```bash
@@ -83,7 +83,7 @@
    ```
 4. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/Ubuntu/.p10k.zsh
+   curl -fsSLO --output-dir ~/ https://raw.githubusercontent.com/jackblackevo/dotfiles/master/.p10k.zsh
    ```
 5. Reload Zsh configuration  
    ```bash
