@@ -362,7 +362,7 @@ lvim.plugins = {
       -- statement (or set two remaps for either one). This remap must be made in normal mode.
       vim.api.nvim_set_keymap(
         "n",
-        "<leader>rp",
+        "<leader>rpp",
         ":lua require('refactoring').debug.printf({below = true})<CR>",
         { noremap = true, desc = 'Debug - Printf' }
       )
@@ -370,10 +370,10 @@ lvim.plugins = {
       -- Print var
 
       -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
-      vim.api.nvim_set_keymap("n", "<leader>rv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
+      vim.api.nvim_set_keymap("n", "<leader>rpv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
         { noremap = true, desc = 'Debug - Print Var' })
       -- Remap in visual mode will print whatever is in the visual selection
-      vim.api.nvim_set_keymap("v", "<leader>rv", ":lua require('refactoring').debug.print_var({})<CR>",
+      vim.api.nvim_set_keymap("v", "<leader>rpv", ":lua require('refactoring').debug.print_var({})<CR>",
         { noremap = true, desc = 'Debug - Print Var' })
 
       -- Cleanup function: this remap should be made in normal mode
