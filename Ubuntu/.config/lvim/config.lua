@@ -299,7 +299,31 @@ lvim.plugins = {
       { "nvim-treesitter/nvim-treesitter" }
     },
     config = function()
-      require('refactoring').setup({})
+      require('refactoring').setup({
+        printf_statements = {
+          javascript = {
+            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
+          },
+          typescript = {
+            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
+          },
+          typescriptreact = {
+            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
+          }
+        },
+        print_var_statements = {
+          javascript = {
+            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
+          },
+          typescript = {
+            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
+          },
+          typescriptreact = {
+            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
+          }
+        }
+
+      })
 
       -- Remaps for the refactoring operations currently offered by the plugin
       vim.api.nvim_set_keymap("v", "<leader>re",
@@ -333,6 +357,28 @@ lvim.plugins = {
         ":lua require('refactoring').select_refactor()<CR>",
         { noremap = true, silent = true, expr = false, desc = 'Select Refactor' }
       )
+
+      -- You can also use below = true here to to change the position of the printf
+      -- statement (or set two remaps for either one). This remap must be made in normal mode.
+      vim.api.nvim_set_keymap(
+        "n",
+        "<leader>rp",
+        ":lua require('refactoring').debug.printf({below = true})<CR>",
+        { noremap = true, desc = 'Debug - Printf' }
+      )
+
+      -- Print var
+
+      -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
+      vim.api.nvim_set_keymap("n", "<leader>rv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
+        { noremap = true, desc = 'Debug - Print Var' })
+      -- Remap in visual mode will print whatever is in the visual selection
+      vim.api.nvim_set_keymap("v", "<leader>rv", ":lua require('refactoring').debug.print_var({})<CR>",
+        { noremap = true, desc = 'Debug - Print Var' })
+
+      -- Cleanup function: this remap should be made in normal mode
+      vim.api.nvim_set_keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>",
+        { noremap = true, desc = 'Debug - Cleanup' })
     end
   }
 }
