@@ -175,7 +175,7 @@ lvim.plugins = {
     end,
   },
   {
-    "mrjones2014/nvim-ts-rainbow",
+    "HiPhish/nvim-ts-rainbow2",
   },
   {
     "norcalli/nvim-colorizer.lua",
