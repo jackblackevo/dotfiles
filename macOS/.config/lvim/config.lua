@@ -29,6 +29,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<M-l>"] = ":BufferLineMoveNext<CR>"
+lvim.keys.normal_mode["<M-h>"] = ":BufferLineMovePrev<CR>"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
