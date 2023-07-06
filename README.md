@@ -51,18 +51,25 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/plugins.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/settings.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/mappings.lua \
     && nvim --headless "+Lazy! sync" +qa
     ```
-13. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+13. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
+    ```bash
+    curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/plugins.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/mappings.lua \
+    && NVIM_APPNAME=vscode-neovim nvim --headless "+Lazy! sync" +qa
+    ```
+14. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
     ```bash
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     ```
-14. Install [LunarVim](https://www.lunarvim.org/)
+15. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
     ```
-15. Configure LunarVim, install plugins
+16. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
@@ -160,19 +167,26 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/nvim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/plugins.lua \
     && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/settings.lua \
-    && curl -fsSLO --output-dir ~/.config/nvim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/nvim/lua/mappings.lua \
     && nvim --headless "+Lazy! sync" +qa
     ```
-16. Install [LunarVim](https://www.lunarvim.org/)
+16. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
+    ```bash
+    curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/init.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/plugins.lua \
+    && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/settings.lua \
+    && curl -fsSLO --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/mappings.lua \
+    && NVIM_APPNAME=vscode-neovim nvim --headless "+Lazy! sync" +qa
+    ```
+17. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
     LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
     ```
-17. Configure LunarVim, install plugins
+18. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa
     ```
-18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
+19. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
     curl -fsSLo cloudflared.deb --output-dir /tmp/ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i /tmp/cloudflared.deb ; rm /tmp/cloudflared.deb
     ```

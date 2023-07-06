@@ -11,10 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local check_not_vscode = function()
-  return not vim.g.vscode
-end
-
 require("lazy").setup({
   {
     "mg979/vim-visual-multi",
@@ -42,42 +38,32 @@ require("lazy").setup({
     "numToStr/Comment.nvim",
     config = function()
       require('Comment').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
-    "ggandor/lightspeed.nvim",
-    config = function()
-      if vim.g.vscode then
-        vim.api.nvim_set_hl(0, 'LightspeedCursor', { reverse = true })
-      end
-    end
+    "ggandor/lightspeed.nvim"
   },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
     config = function()
       require('lualine').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
       require('gitsigns').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "folke/which-key.nvim",
     config = function()
       require('which-key').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
-    "rcarriga/nvim-notify",
-    cond = check_not_vscode
+    "rcarriga/nvim-notify"
   },
   {
     "hrsh7th/nvim-cmp",
@@ -150,16 +136,14 @@ require("lazy").setup({
           { name = 'cmdline' }
         })
       })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate", -- :MasonUpdate updates registry contents
     config = function()
       require('mason').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -184,22 +168,19 @@ require("lazy").setup({
       lspconfig.eslint.setup({
         capabilities = capabilities
       })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "j-hui/fidget.nvim",
     config = function()
       require('fidget').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "ray-x/lsp_signature.nvim",
     config = function()
       require('lsp_signature').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "glepnir/lspsaga.nvim",
@@ -225,15 +206,13 @@ require("lazy").setup({
       { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
       { "nvim-treesitter/nvim-treesitter" }
-    },
-    cond = check_not_vscode
+    }
   },
   {
     "windwp/nvim-autopairs",
     config = function()
       require('nvim-autopairs').setup()
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -243,8 +222,7 @@ require("lazy").setup({
         ensure_installed = { 'lua', 'json', 'html', 'css', 'javascript', 'typescript', 'tsx' },
         highlight = { enable = true }
       })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "catppuccin/nvim",
@@ -253,8 +231,7 @@ require("lazy").setup({
       require('catppuccin').setup()
       vim.g.catppuccin_flavour = 'frappe'
       vim.cmd [[colorscheme catppuccin]]
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -263,15 +240,13 @@ require("lazy").setup({
         show_current_context = true,
         show_current_context_start = true
       })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require('colorizer').setup({ '*' }, { css = true })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "akinsho/bufferline.nvim",
@@ -292,8 +267,7 @@ require("lazy").setup({
           }
         }
       })
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -304,8 +278,7 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>e', '<Cmd>NvimTreeToggle<CR>')
       vim.keymap.set('n', '<leader>r', '<Cmd>NvimTreeRefresh<CR>')
       vim.keymap.set('n', '<leader>n', '<Cmd>NvimTreeFindFile<CR>')
-    end,
-    cond = check_not_vscode
+    end
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -316,7 +289,6 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end)
       vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end)
       vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end)
-    end,
-    cond = check_not_vscode
+    end
   }
 })
