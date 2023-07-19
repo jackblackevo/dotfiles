@@ -157,8 +157,8 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "f", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "F", ":HopWord<cr>", { silent = true })
+      vim.keymap.set("n", "f", ":HopChar2<cr>", { silent = true })
+      vim.keymap.set("n", "F", ":HopWord<cr>", { silent = true })
     end,
   },
   {
