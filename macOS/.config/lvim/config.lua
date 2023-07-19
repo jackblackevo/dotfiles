@@ -292,86 +292,45 @@ lvim.plugins = {
       { "nvim-treesitter/nvim-treesitter" }
     },
     config = function()
-      require('refactoring').setup({
-        printf_statements = {
-          javascript = {
-            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
-          },
-          typescript = {
-            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
-          },
-          typescriptreact = {
-            'console.log("%s"); /* eslint-disable-line no-console, prettier/prettier */'
-          }
-        },
-        print_var_statements = {
-          javascript = {
-            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
-          },
-          typescript = {
-            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
-          },
-          typescriptreact = {
-            'console.log("%s %%s", %s); /* eslint-disable-line no-console, prettier/prettier */'
-          }
-        }
+      require('refactoring').setup({})
 
-      })
+      vim.keymap.set("x", "<leader>re", function() require('refactoring').refactor('Extract Function') end,
+        { desc = 'Refactoring - Extract Function' })
+      vim.keymap.set("x", "<leader>rf", function() require('refactoring').refactor('Extract Function To File') end,
+        { desc = 'Refactoring - Extract Function To File' })
+      -- Extract function supports only visual mode
+      vim.keymap.set("x", "<leader>rv", function() require('refactoring').refactor('Extract Variable') end,
+        { desc = 'Refactoring - Extract Variable' })
+      -- Extract variable supports only visual mode
+      vim.keymap.set({ "n", "x" }, "<leader>ri", function() require('refactoring').refactor('Inline Variable') end,
+        { desc = 'Refactoring - Inline Variable' })
+      -- Inline var supports both normal and visual mode
 
-      -- Remaps for the refactoring operations currently offered by the plugin
-      vim.api.nvim_set_keymap("v", "<leader>re",
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Function' })
-      vim.api.nvim_set_keymap("v", "<leader>rf",
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Function To File' })
-      vim.api.nvim_set_keymap("v", "<leader>rv",
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Variable' })
-      vim.api.nvim_set_keymap("v", "<leader>ri",
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Inline Variable' })
-
-      -- Extract block doesn't need visual mode
-      vim.api.nvim_set_keymap("n", "<leader>rbb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Block' })
-      vim.api.nvim_set_keymap("n", "<leader>rbf",
-        [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Extract Block To File' })
-
-      -- Inline variable can also pick up the identifier currently under the cursor without visual mode
-      vim.api.nvim_set_keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-        { noremap = true, silent = true, expr = false, desc = 'Refactoring - Inline Variable' })
+      vim.keymap.set("n", "<leader>rbb", function() require('refactoring').refactor('Extract Block') end,
+        { desc = 'Refactoring - Extract Block' })
+      vim.keymap.set("n", "<leader>rbf", function() require('refactoring').refactor('Extract Block To File') end,
+        { desc = 'Refactoring - Extract Block To File' })
+      -- Extract block supports only normal mode
 
       -- prompt for a refactor to apply when the remap is triggered
-      vim.api.nvim_set_keymap(
-        "v",
-        "<leader>rr",
-        ":lua require('refactoring').select_refactor()<CR>",
-        { noremap = true, silent = true, expr = false, desc = 'Select Refactor' }
-      )
+      vim.keymap.set({ "n", "x" }, "<leader>rr", function() require('refactoring').select_refactor() end,
+        { desc = 'Refactoring - Select Refactor' })
+      -- Note that not all refactor support both normal and visual mode
 
       -- You can also use below = true here to to change the position of the printf
       -- statement (or set two remaps for either one). This remap must be made in normal mode.
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>rpp",
-        ":lua require('refactoring').debug.printf({below = true})<CR>",
-        { noremap = true, desc = 'Debug - Printf' }
-      )
+      vim.keymap.set("n", "<leader>rpp", function() require('refactoring').debug.printf({ below = false }) end,
+        { desc = 'Debug - Printf' })
 
       -- Print var
 
-      -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
-      vim.api.nvim_set_keymap("n", "<leader>rpv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
-        { noremap = true, desc = 'Debug - Print Var' })
-      -- Remap in visual mode will print whatever is in the visual selection
-      vim.api.nvim_set_keymap("v", "<leader>rpv", ":lua require('refactoring').debug.print_var({})<CR>",
-        { noremap = true, desc = 'Debug - Print Var' })
+      vim.keymap.set({ "x", "n" }, "<leader>rpv", function() require('refactoring').debug.print_var() end,
+        { desc = 'Debug - Print Var' })
+      -- Supports both visual and normal mode
 
-      -- Cleanup function: this remap should be made in normal mode
-      vim.api.nvim_set_keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>",
-        { noremap = true, desc = 'Debug - Cleanup' })
+      vim.keymap.set("n", "<leader>rc", function() require('refactoring').debug.cleanup({}) end,
+        { desc = 'Debug - Cleanup' })
+      -- Supports only normal mode
     end
   }
 }
