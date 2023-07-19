@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# https://github.com/lukechilds/zsh-nvm#nvm-completion
+export NVM_COMPLETION=true
 # https://github.com/lukechilds/zsh-nvm#auto-use
 export NVM_AUTO_USE=true
 
