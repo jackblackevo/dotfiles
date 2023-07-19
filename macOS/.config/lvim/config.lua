@@ -130,6 +130,7 @@ formatters.setup {
   --     extra_args = { "--print-width", "100" },
   --     filetypes = { "typescript", "typescriptreact" },
   --   },
+  { command = "prettierd" },
   { command = "eslint_d" }
 }
 local linters = require "lvim.lsp.null-ls.linters"
