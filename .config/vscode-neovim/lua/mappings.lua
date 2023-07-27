@@ -11,7 +11,7 @@ vim.keymap.set({ 'n', 'x' }, '<C-l>', '<Cmd>call VSCodeNotify("workbench.action.
 vim.keymap.set('n', 'gr', '<Cmd>call VSCodeNotify("editor.action.goToReferences")<CR>')
 
 vim.keymap.set('n', '<Space>', '<Cmd>call VSCodeNotify("whichkey.show")<CR>')
-vim.keymap.set('x', '<Space>', '<Cmd>call VSCodeNotifyVisual("whichkey.show", 1)<CR>')
+vim.keymap.set('x', '<Space>', '<Cmd>call VSCodeNotify("whichkey.show", 1)<CR>')
 
 vim.keymap.set('n', '<S-l>', 'gt', { remap = true })
 vim.keymap.set('n', '<S-h>', 'gT', { remap = true })
