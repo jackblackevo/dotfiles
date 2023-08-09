@@ -57,6 +57,7 @@ lvim.builtin.which_key.mappings["D"] = {
   h = { "<cmd>DiffviewFileHistory<cr>", "File History" },
   H = { "<cmd>DiffviewFileHistory %<cr>", "File History(for current file)" },
 }
+lvim.builtin.which_key.mappings["E"] = { "<cmd>NvimTreeFocus<cr>", "Switch Explorer" }
 
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
