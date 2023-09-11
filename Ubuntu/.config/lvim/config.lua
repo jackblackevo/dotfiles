@@ -340,6 +340,14 @@ lvim.plugins = {
         desc = 'Refactoring - Inline Variable'
       },
 
+      -- Inline func supports only normal
+      {
+        "<leader>rI",
+        mode = { "n" },
+        function() require('refactoring').refactor('Inline Function') end,
+        desc = 'Refactoring - Inline Function'
+      },
+
       -- Extract block supports only normal mode
       {
         "<leader>rbb",
