@@ -25,7 +25,7 @@ vim.opt.listchars:append("trail:·")
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -154,15 +154,42 @@ code_actions.setup {
 -- -- Additional Plugins <https://www.lunarvim.org/docs/configuration/plugins/user-plugins>
 lvim.plugins = {
   {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-    end,
+    "folke/flash.nvim",
+    event = "VeryLazy",
     keys = {
-      { "f", mode = { "n" }, ":HopChar2<cr>", { silent = true } },
-      { "F", mode = { "n" }, ":HopWord<cr>",  { silent = true } }
-    }
+      {
+        "s",
+        function() require("flash").jump() end,
+        mode = { "n", "o", "x" },
+        desc = "Flash"
+      },
+      {
+        "S",
+        function() require("flash").treesitter() end,
+        mode = { "n", "o", "x" },
+        desc = "Flash Treesitter"
+      },
+      {
+        "r",
+        function() require("flash").remote() end,
+        mode = { "o" },
+        desc = "Remote Flash"
+      },
+      {
+        "R",
+        function() require("flash").treesitter_search() end,
+        mode = { "o", "x" },
+        desc =
+        "Treesitter Search"
+      },
+      {
+        "<c-s>",
+        function() require("flash").toggle() end,
+        mode = { "c" },
+        desc =
+        "Toggle Flash Search"
+      },
+    },
   },
   {
     "sindrets/diffview.nvim",
