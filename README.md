@@ -60,12 +60,14 @@
     ```
 14. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
-    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies
     ```
 15. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/lvim/config.lua \
-    && lvim --headless "+Lazy! sync" +qa
+    && lvim --headless "+Lazy! sync" +qa \
+    && nvm install --lts \
+    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +qa
     ```
 
 ## WSL - Ubuntu
@@ -165,12 +167,14 @@
     ```
 16. Install [LunarVim](https://www.lunarvim.org/)
     ```bash
-    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies
     ```
 17. Configure LunarVim, install plugins
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.config/lvim/config.lua \
-    && lvim --headless "+Lazy! sync" +qa
+    && lvim --headless "+Lazy! sync" +qa \
+    && nvm install --lts \
+    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +qa
     ```
 18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
