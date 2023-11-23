@@ -18,4 +18,5 @@ bind generic I !git add -i %(file)
 
 # https://jonas.github.io/tig/doc/tigrc.5.html#_advanced_shell_like_commands
 # https://stackoverflow.com/questions/52542803/take-sha-number-of-commit-by-tig
-bind generic 9 @sh -c "echo -n %(commit) | win32yank.exe -i"
+# https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip
+bind generic 9 @sh -c "echo -n %(commit) | clip.exe"
