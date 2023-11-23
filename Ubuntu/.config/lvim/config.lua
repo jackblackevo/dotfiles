@@ -3,20 +3,15 @@
  `lvim` is the global options object
 ]]
 -- Set a compatible clipboard manager
--- https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
--- https://neovim.io/doc/user/provider.html#clipboard-wsl
--- https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip
 vim.g.clipboard = {
-  name = "WslClipboard",
   copy = {
-    ["+"] = "clip.exe",
-    ["*"] = "clip.exe",
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
   },
   paste = {
-    ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ["+"] = "win32yank.exe -o --lf",
+    ["*"] = "win32yank.exe -o --lf",
   },
-  cache_enabled = 0,
 }
 
 -- vim options
