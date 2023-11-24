@@ -67,7 +67,7 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa \
     && nvm install --lts \
-    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +qa
+    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +LvimCacheReset +qa
     ```
 
 ## WSL - Ubuntu
@@ -174,7 +174,7 @@
     curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.config/lvim/config.lua \
     && lvim --headless "+Lazy! sync" +qa \
     && nvm install --lts \
-    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +qa
+    && lvim --headless '+MasonInstall typescript-language-server stylelint-lsp eslint_d prettierd' +LvimCacheReset +qa
     ```
 18. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
