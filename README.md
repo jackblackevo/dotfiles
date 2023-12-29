@@ -11,7 +11,7 @@
    ```
 3. Configure [Alacritty](https://alacritty.org/)
    ```bash
-   curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/alacritty/alacritty.yml
+   curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/alacritty/alacritty.toml
    ```
 4. Copy `.zshrc` file to home directory
    ```bash

@@ -1,0 +1,8 @@
+[font]
+size = 16.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+option_as_alt = "OnlyLeft"
