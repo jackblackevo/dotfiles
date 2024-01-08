@@ -232,6 +232,24 @@ lvim.plugins = {
     build = "./install.sh",
     dependencies = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
+    config = function()
+      -- https://github.com/tzachar/cmp-tabnine#sorting
+      local cmp_compare = require('cmp.config.compare')
+      lvim.builtin.cmp.sorting = {
+        priority_weight = 2,
+        comparators = {
+          require('cmp_tabnine.compare'),
+          cmp_compare.offset,
+          cmp_compare.exact,
+          cmp_compare.score,
+          cmp_compare.recently_used,
+          cmp_compare.kind,
+          cmp_compare.sort_text,
+          cmp_compare.length,
+          cmp_compare.order,
+        },
+      }
+    end
   },
   {
     "codota/tabnine-nvim",
