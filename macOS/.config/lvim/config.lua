@@ -79,7 +79,6 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/configuration/language-features/language-servers>
 
-vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "stylelint_lsp" })
 vim.list_extend(lvim.lsp.installer.setup.automatic_installation.exclude, { "tsserver" })
 
 -- --- disable automatic installation of servers
@@ -90,14 +89,18 @@ vim.list_extend(lvim.lsp.installer.setup.automatic_installation.exclude, { "tsse
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
-require("lvim.lsp.manager").setup("stylelint_lsp", {
-  settings = {
-    stylelintplus = {
-      autoFixOnSave = true,
-      autoFixOnFormat = true
+
+-- https://github.com/williamboman/mason.nvim/blob/c43eeb5614a09dc17c03a7fb49de2e05de203924/doc/mason.txt#L467
+if require("mason-registry").is_installed("stylelint_lsp") then
+  require("lvim.lsp.manager").setup("stylelint_lsp", {
+    settings = {
+      stylelintplus = {
+        autoFixOnSave = true,
+        autoFixOnFormat = true
+      }
     }
-  }
-})
+  })
+end
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
