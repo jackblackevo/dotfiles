@@ -79,7 +79,8 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/configuration/language-features/language-servers>
 
-lvim.lsp.installer.setup.ensure_installed = { "tsserver", "stylelint_lsp" }
+lvim.lsp.installer.setup.ensure_installed = { "stylelint_lsp" }
+lvim.lsp.installer.setup.automatic_installation.exclude = { "tsserver" }
 
 -- --- disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
@@ -89,14 +90,6 @@ lvim.lsp.installer.setup.ensure_installed = { "tsserver", "stylelint_lsp" }
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
-require("lvim.lsp.manager").setup("tsserver", {
-  init_options = {
-    preferences = {
-      importModuleSpecifierPreference = "relative"
-    }
-  }
-})
 require("lvim.lsp.manager").setup("stylelint_lsp", {
   settings = {
     stylelintplus = {
@@ -153,6 +146,11 @@ code_actions.setup {
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/configuration/plugins/user-plugins>
 lvim.plugins = {
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   {
     "folke/flash.nvim",
     event = "VeryLazy",
