@@ -91,8 +91,8 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/configuration/language-features/language-servers>
 
-lvim.lsp.installer.setup.ensure_installed = { "stylelint_lsp" }
-lvim.lsp.installer.setup.automatic_installation.exclude = { "tsserver" }
+vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "stylelint_lsp" })
+vim.list_extend(lvim.lsp.installer.setup.automatic_installation.exclude, { "tsserver" })
 
 -- --- disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
