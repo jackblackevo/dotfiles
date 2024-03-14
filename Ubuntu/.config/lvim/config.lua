@@ -33,6 +33,7 @@ vim.opt.listchars:append("tab:»·")
 vim.opt.listchars:append("trail:·")
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+vim.opt.spell = true
 
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
