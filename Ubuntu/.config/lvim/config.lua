@@ -92,7 +92,7 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/configuration/language-features/language-servers>
 
-vim.list_extend(lvim.lsp.installer.setup.automatic_installation.exclude, { "tsserver" })
+vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "tsserver" })
 
 -- --- disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
@@ -102,6 +102,15 @@ vim.list_extend(lvim.lsp.installer.setup.automatic_installation.exclude, { "tsse
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
+require("lvim.lsp.manager").setup("tsserver", {
+  init_options = {
+    preferences = {
+      importModuleSpecifierPreference = "relative"
+    }
+  }
+})
 
 -- https://github.com/williamboman/mason.nvim/blob/c43eeb5614a09dc17c03a7fb49de2e05de203924/doc/mason.txt#L467
 if require("mason-registry").is_installed("stylelint_lsp") then
@@ -162,24 +171,6 @@ code_actions.setup {
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/configuration/plugins/user-plugins>
 lvim.plugins = {
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-    config = function()
-      require("typescript-tools").setup {
-        settings = {
-          tsserver_plugins = {
-            -- https://github.com/pmizio/typescript-tools.nvim#-styled-components-support
-            -- for TypeScript v4.9+
-            "@styled/typescript-styled-plugin",
-            -- or for older TypeScript versions
-            -- "typescript-styled-plugin",
-          },
-        },
-      }
-    end,
-  },
   {
     "folke/flash.nvim",
     event = "VeryLazy",
