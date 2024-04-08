@@ -201,7 +201,7 @@ lvim.plugins = {
         "Treesitter Search"
       },
       {
-        "<c-s>",
+        "<c-S>",
         function() require("flash").toggle() end,
         mode = { "c" },
         desc =
