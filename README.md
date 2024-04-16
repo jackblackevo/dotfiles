@@ -1,6 +1,7 @@
 # Installation
 
 ## macOS
+
 1. Install [Homebrew](https://brew.sh/)
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -71,11 +72,12 @@
     ```
 
 ## WSL - Ubuntu
-1. Install packages  
+
+1. Install packages
    ```bash
    sudo apt update && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y
    ```
-2. Copy `.zshrc` file to home directory  
+2. Copy `.zshrc` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshrc
    ```
@@ -87,7 +89,7 @@
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
-5. Reload Zsh configuration  
+5. Reload Zsh configuration
    ```bash
    zsh
    ```
@@ -131,14 +133,13 @@
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
 10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
-    See: [How to use the Windows clipboard from WSL?](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)  
-    Note: [clip.exe](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip) does not support UTF-8.
+    See: [Clipboard integration](https://neovim.io/doc/user/provider.html#provider-clipboard)  
+    Note:
+    - [clip.exe](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip) does not support UTF-8.
+    - https://github.com/equalsraf/win32yank/issues/9#issuecomment-1384523965
     ```bash
-    curl -sLo /tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/latest/download/win32yank-x64.zip \
-    && unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe \
-    && chmod +x /tmp/win32yank.exe \
-    && mv /tmp/win32yank.exe ~/.local/bin/ \
-    && rm /tmp/win32yank.zip
+    winget.exe install win32yank
+    ```
 11. Install [im-select](https://github.com/daipeihust/im-select#windows)
     ```bash
     curl -fsSLo ~/.local/bin/im-select --create-dirs https://github.com/daipeihust/im-select/raw/master/win/out/x64/im-select.exe \
