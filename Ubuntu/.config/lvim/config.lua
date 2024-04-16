@@ -345,9 +345,6 @@ lvim.plugins = {
     branch = 'master'
   },
   {
-    'brglng/vim-im-select'
-  },
-  {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
