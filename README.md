@@ -59,16 +59,10 @@
     ```bash
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     ```
-14. Install [LunarVim](https://www.lunarvim.org/)
+14. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
     ```bash
-    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies
-    ```
-15. Configure LunarVim, install plugins
-    ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/lvim/config.lua \
-    && lvim --headless "+Lazy! sync" +qa \
-    && nvm install --lts \
-    && lvim --headless '+MasonInstall typescript-language-server eslint_d prettierd' +LvimCacheReset +qa
+    git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
+    && NVIM_APPNAME=astronvim nvim --headless +q
     ```
 
 ## WSL - Ubuntu
@@ -161,18 +155,12 @@
     && curl -fsSLO --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/mappings.lua \
     && NVIM_APPNAME=vscode-neovim nvim --headless "+Lazy! sync" +qa
     ```
-15. Install [LunarVim](https://www.lunarvim.org/)
+15. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
     ```bash
-    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies
+    git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
+    && NVIM_APPNAME=astronvim nvim --headless +q
     ```
-16. Configure LunarVim, install plugins
-    ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.config/lvim/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.config/lvim/config.lua \
-    && lvim --headless "+Lazy! sync" +qa \
-    && nvm install --lts \
-    && lvim --headless '+MasonInstall typescript-language-server eslint_d prettierd' +LvimCacheReset +qa
-    ```
-17. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
+16. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
     ```bash
     curl -fsSLo cloudflared.deb --output-dir /tmp/ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i /tmp/cloudflared.deb ; rm /tmp/cloudflared.deb
     ```

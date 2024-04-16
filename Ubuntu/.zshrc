@@ -149,6 +149,10 @@ alias vim="nvim"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# https://docs.astronvim.com/reference/alt_install/#isolated-installation
+alias astronvim="NVIM_APPNAME=astronvim nvim"
+alias astro="astronvim"
+
 # https://github.com/jonas/tig/issues/559#issuecomment-456223819
 alias tig='TERM=xterm-256color tig'
 
