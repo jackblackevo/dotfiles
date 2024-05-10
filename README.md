@@ -25,7 +25,10 @@
    ```
 5. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc \
+   && zimfw update \
+   && zimfw upgrade \
+   && zimfw clean
    ```
 6. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
@@ -82,7 +85,10 @@
    ```
 3. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.zimrc \
+   && zimfw update \
+   && zimfw upgrade \
+   && zimfw clean
    ```
 4. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
