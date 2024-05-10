@@ -74,7 +74,7 @@
 
 1. Install packages
    ```bash
-   sudo apt update && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y
+   sudo apt update && sudo apt upgrade -y && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y && sudo apt clean
    ```
 2. Copy `.zshrc` file to home directory
    ```bash
