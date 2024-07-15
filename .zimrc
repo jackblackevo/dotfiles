@@ -59,6 +59,5 @@ zmodule romkatv/powerlevel10k --use degit
 zmodule https://github.com/agkozak/zsh-z
 
 zmodule lukechilds/zsh-nvm
-zmodule Tarrasch/zsh-bd
 zmodule changyuheng/zsh-interactive-cd
 zmodule changyuheng/fz
