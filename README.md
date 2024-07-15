@@ -70,9 +70,10 @@
    ```bash
    sudo apt update && sudo apt upgrade -y && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y && sudo apt clean
    ```
-2. Copy `.zshrc` file to home directory
+2. Copy `.zshrc` and `.zshenv` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshrc \
+   && curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshenv
    ```
 3. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
