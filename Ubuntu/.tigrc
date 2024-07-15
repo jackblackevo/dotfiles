@@ -1,5 +1,6 @@
-# https://github.com/jonas/tig/issues/313#issuecomment-792701628
-set diff-highlight = true
+# Make sure diff-highlight is executable
+# https://github.com/jonas/tig/blob/37ccb67e95ed7e9fc9e49872f9b65f3ca692f614/src/apps.c#L79-L87
+set diff-highlight = /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 
 # https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
 # https://www.ditig.com/256-colors-cheat-sheet

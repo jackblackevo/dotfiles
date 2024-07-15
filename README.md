@@ -46,16 +46,11 @@
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
-10. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
-    ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.local/bin https://raw.githubusercontent.com/git/git/v2.13.2/contrib/diff-highlight/diff-highlight \
-    && chmod +x ~/.local/bin/diff-highlight
-    ```
-11. Copy `.tigrc` file to home directory
+10. Copy `.tigrc` file to home directory
     ```bash
     curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
     ```
-12. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
+11. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/plugins.lua \
@@ -63,11 +58,11 @@
     && curl -fsSLO --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/mappings.lua \
     && NVIM_APPNAME=vscode-neovim nvim --headless "+Lazy! sync" +qa
     ```
-13. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+12. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
     ```bash
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     ```
-14. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
+13. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
     ```bash
     git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
@@ -145,10 +140,9 @@
     ```bash
     winget.exe install win32yank
     ```
-11. Install [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight)
+11. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.local/bin https://raw.githubusercontent.com/git/git/v2.13.2/contrib/diff-highlight/diff-highlight \
-    && chmod +x ~/.local/bin/diff-highlight
+    sudo chmod +x $(git --exec-path)/../../share/doc/git/contrib/diff-highlight/diff-highlight
     ```
 12. Copy `.tigrc` file to home directory
     ```bash

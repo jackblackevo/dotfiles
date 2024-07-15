@@ -1,4 +1,4 @@
-# https://github.com/jonas/tig/issues/313#issuecomment-792701628
+# https://github.com/jonas/tig/blob/37ccb67e95ed7e9fc9e49872f9b65f3ca692f614/src/apps.c#L79-L87
 set diff-highlight = true
 
 # https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
