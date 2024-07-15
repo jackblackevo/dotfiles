@@ -142,7 +142,3 @@
     git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
     ```
-15. Install [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
-    ```bash
-    curl -fsSLo cloudflared.deb --output-dir /tmp/ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i /tmp/cloudflared.deb ; rm /tmp/cloudflared.deb
-    ```
