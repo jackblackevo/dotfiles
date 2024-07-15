@@ -159,6 +159,7 @@ alias tig='TERM=xterm-256color tig'
 # https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
 FZ_HISTORY_CD_CMD=zshz
 
+# Set up shell integration
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 

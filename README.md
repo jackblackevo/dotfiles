@@ -34,23 +34,19 @@
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
-7. Install useful key bindings and fuzzy completion by [fzf](https://github.com/junegunn/fzf#using-homebrew)
-   ```bash
-   $(brew --prefix)/opt/fzf/install
-   ```
-8. Reload Zsh configuration
+7. Reload Zsh configuration
    ```bash
    zsh
    ```
-9. Copy `.tmux.conf` file to home directory
+8. Copy `.tmux.conf` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
-10. Copy `.tigrc` file to home directory
-    ```bash
-    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
-    ```
-11. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
+9. Copy `.tigrc` file to home directory
+   ```bash
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
+   ```
+10. Configure Neovim for [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim), install plugins via [lazy.nvim](https://github.com/folke/lazy.nvim#-usage)
     ```bash
     curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/init.lua \
     && curl -fsSLO --create-dirs --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/plugins.lua \
@@ -58,11 +54,11 @@
     && curl -fsSLO --output-dir ~/.config/vscode-neovim/lua/ https://github.com/jackblackevo/dotfiles/raw/main/.config/vscode-neovim/lua/mappings.lua \
     && NVIM_APPNAME=vscode-neovim nvim --headless "+Lazy! sync" +qa
     ```
-12. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
+11. Enable repeat on keydown for Visual Studio Code & [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim#-installation)
     ```bash
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     ```
-13. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
+12. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
     ```bash
     git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q

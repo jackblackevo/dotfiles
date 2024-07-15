@@ -157,7 +157,10 @@ alias tig='TERM=xterm-256color tig'
 # https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
 FZ_HISTORY_CD_CMD=zshz
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up shell integration
+# https://github.com/Homebrew/homebrew-core/commit/0426b1d6b8d159aea938cadd8221249138c1ae29
+# https://github.com/junegunn/fzf/blob/master/CHANGELOG.md#0480
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
