@@ -156,6 +156,7 @@ alias astro="astronvim"
 # https://github.com/jonas/tig/issues/559#issuecomment-456223819
 alias tig='TERM=xterm-256color tig'
 
+# Use agkozak/zsh-z instead of rupa/z for mrjohannchang/fz.sh
 # https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
 FZ_HISTORY_CD_CMD=zshz
 
