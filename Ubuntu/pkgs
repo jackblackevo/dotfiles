@@ -1,11 +1,10 @@
-ack
+fuse
 fzf
-g++
+gcc
 git
-libfuse2
-make
+python3-venv
 ripgrep
 tig
-tldr
+tmux
 unzip
 zsh
