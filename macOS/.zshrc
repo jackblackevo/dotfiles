@@ -142,9 +142,6 @@ unset key
 
 export TERM=screen-256color
 
-# https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
-export PATH="$HOME/.local/bin:$PATH"
-
 alias vim="nvim"
 
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation
