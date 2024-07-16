@@ -5,11 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# https://github.com/lukechilds/zsh-nvm#nvm-completion
-export NVM_COMPLETION=true
-# https://github.com/lukechilds/zsh-nvm#auto-use
-export NVM_AUTO_USE=true
-
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -140,8 +135,6 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-export TERM=screen-256color
-
 alias vim="nvim"
 
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation
@@ -150,10 +143,6 @@ alias astro="astronvim"
 
 # https://github.com/jonas/tig/issues/559#issuecomment-456223819
 alias tig='TERM=xterm-256color tig'
-
-# Use agkozak/zsh-z instead of rupa/z for mrjohannchang/fz.sh
-# https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
-FZ_HISTORY_CD_CMD=zshz
 
 # Set up shell integration
 # https://github.com/Homebrew/homebrew-core/commit/0426b1d6b8d159aea938cadd8221249138c1ae29
