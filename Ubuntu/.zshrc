@@ -135,6 +135,9 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+# Define the identities (from ~/.ssh) to be loaded and cached on login
+zstyle ':zim:ssh' ids 'id_ed25519'
+
 alias vim="nvim"
 
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation
