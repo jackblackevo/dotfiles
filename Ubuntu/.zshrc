@@ -138,6 +138,10 @@ unset key
 # Define the identities (from ~/.ssh) to be loaded and cached on login
 zstyle ':zim:ssh' ids 'id_ed25519'
 
+# https://github.com/Aloxaf/fzf-tab/issues/24#issuecomment-574986122
+zstyle -d ':completion:*' format
+zstyle ':completion:*:descriptions' format '[%d]'
+
 alias vim="nvim"
 
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation

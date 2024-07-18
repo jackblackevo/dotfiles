@@ -135,6 +135,10 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+# https://github.com/Aloxaf/fzf-tab/issues/24#issuecomment-574986122
+zstyle -d ':completion:*' format
+zstyle ':completion:*:descriptions' format '[%d]'
+
 alias vim="nvim"
 
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation
