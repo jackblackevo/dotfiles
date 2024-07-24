@@ -139,6 +139,9 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+# Add private key identities to the authentication agent (ssh-agent)
+ssh-add --apple-load-keychain -q
+
 # https://github.com/Aloxaf/fzf-tab/issues/24#issuecomment-574986122
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
