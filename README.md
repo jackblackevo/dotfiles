@@ -130,7 +130,7 @@
     ```
 13. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
-    curl -fsSLO --create-dirs --output-dir ~/.local/bin https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && chmod u+x ~/.local/bin/nvim.appimage && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
+    curl -fsSL --create-dirs --output ~/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage && chmod u+x ~/.local/bin/nvim.appimage && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
 14. Install [AstroNvim](https://astronvim.com/) (use [unattended installation](https://docs.astronvim.com/reference/alt_install/#unattended-installation))
     ```bash
