@@ -44,7 +44,8 @@
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
    ```
-10. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)
+10. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+    See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
@@ -132,7 +133,8 @@
     ```bash
     curl -fsSL --create-dirs --output ~/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage && chmod u+x ~/.local/bin/nvim.appimage && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
-14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)
+14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+    See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
