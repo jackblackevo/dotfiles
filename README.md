@@ -47,7 +47,7 @@
 10. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
-    git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
+    git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
     ```
 
@@ -136,6 +136,6 @@
 14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
-    git clone git@github.com:jackblackevo/astronvim_config.git ~/.config/astronvim \
+    git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \
     && NVIM_APPNAME=astronvim nvim --headless +q
     ```
