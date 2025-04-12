@@ -8,12 +8,10 @@
    ```
 2. Install all dependencies from the `Brewfile` through [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand)
    ```bash
-   curl -fsSLO --output-dir /tmp/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/Brewfile \
-   && brew update \
+   brew update \
    && brew upgrade \
-   && brew bundle --file /tmp/Brewfile \
-   && brew cleanup \
-   && rm /tmp/Brewfile
+   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/macOS/Brewfile | brew bundle --file=- \
+   && brew cleanup
    ```
 3. Configure [Alacritty](https://alacritty.org/)
    ```bash
