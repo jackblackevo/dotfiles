@@ -55,7 +55,11 @@
 
 1. Install packages
    ```bash
-   sudo apt update && sudo apt upgrade -y && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y && sudo apt clean
+   sudo apt update \
+   && sudo apt upgrade -y \
+   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y \
+   && sudo apt clean \
+   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/win-pkgs | xargs winget.exe install
    ```
 2. Copy `.zshenv` and `.zshrc` file to home directory
    ```bash
@@ -113,27 +117,19 @@
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
    ```
-10. Install [`win32yank.exe`](https://github.com/equalsraf/win32yank)  
-    See: [Clipboard integration](https://neovim.io/doc/user/provider.html#provider-clipboard)  
-    Note:
-    - [clip.exe](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip) does not support UTF-8.
-    - https://github.com/equalsraf/win32yank/issues/9#issuecomment-1384523965
-    ```bash
-    winget.exe install win32yank
-    ```
-11. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable
+10. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable
     ```bash
     sudo chmod +x $(git --exec-path)/../../share/doc/git/contrib/diff-highlight/diff-highlight
     ```
-12. Copy `.tigrc` file to home directory
+11. Copy `.tigrc` file to home directory
     ```bash
     curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tigrc
     ```
-13. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
+12. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
     curl -fsSL --create-dirs --output ~/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage && chmod u+x ~/.local/bin/nvim.appimage && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
-14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+13. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \
