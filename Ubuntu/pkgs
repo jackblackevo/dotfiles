@@ -1,9 +1,7 @@
 fd-find
-fuse
 fzf
 gcc
 git
-python3-venv
 ripgrep
 tig
 tmux
