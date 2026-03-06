@@ -17,9 +17,10 @@
    ```bash
    curl -fsSLO --create-dirs --output-dir ~/.config/alacritty/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.config/alacritty/alacritty.toml
    ```
-4. Copy `.zshrc` file to home directory
+4. Copy `.zprofile` and `.zshrc` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zshrc
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zprofile \
+   && curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zshrc
    ```
 5. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
