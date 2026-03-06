@@ -1,4 +1,8 @@
-# See /etc/zsh/zshrc
+# Prevent Ubuntu's /etc/zsh/zshrc from calling compinit, as zimfw/completion
+# manages compinit instead
+# See:
+# - /etc/zsh/zshrc
+# - https://github.com/zimfw/completion
 skip_global_compinit=1
 
 # Match tmux's default-terminal for true color and Neovim compatibility inside tmux
