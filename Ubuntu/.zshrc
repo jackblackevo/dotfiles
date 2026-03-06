@@ -2,6 +2,10 @@
 # https://github.com/junegunn/fzf-git.sh#list-of-bindings
 stty -ixon
 
+# Match tmux's default-terminal for true color and Neovim compatibility inside tmux
+# See: .tmux.conf
+export TERM=screen-256color
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -99,6 +103,21 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
+#
+# fz
+#
+
+# Use agkozak/zsh-z instead of rupa/z for mrjohannchang/fz.sh
+# https://github.com/changyuheng/fz.sh/issues/21#issuecomment-541839988
+export FZ_HISTORY_CD_CMD=zshz
+
+#
+# zsh-nvm
+#
+
+# https://github.com/lukechilds/zsh-nvm#auto-use
+export NVM_AUTO_USE=true
 
 # ------------------
 # Initialize modules
