@@ -1,3 +1,5 @@
+# Match tmux's default-terminal for true color and Neovim compatibility inside tmux
+# See: .tmux.conf
 export TERM=screen-256color
 
 # Use agkozak/zsh-z instead of rupa/z for mrjohannchang/fz.sh

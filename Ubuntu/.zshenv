@@ -1,6 +1,8 @@
 # See /etc/zsh/zshrc
 skip_global_compinit=1
 
+# Match tmux's default-terminal for true color and Neovim compatibility inside tmux
+# See: .tmux.conf
 export TERM=screen-256color
 
 # https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
