@@ -19,4 +19,5 @@ bind generic I !git add -i %(file)
 
 # https://jonas.github.io/tig/doc/tigrc.5.html#_advanced_shell_like_commands
 # https://stackoverflow.com/questions/52542803/take-sha-number-of-commit-by-tig
+# https://man.freebsd.org/cgi/man.cgi?query=pbcopy&manpath=macOS+26.3
 bind generic 9 @sh -c "printf '%s' %(commit) | pbcopy"
