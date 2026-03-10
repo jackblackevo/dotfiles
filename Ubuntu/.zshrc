@@ -119,6 +119,14 @@ export FZ_HISTORY_CD_CMD=zshz
 # https://github.com/lukechilds/zsh-nvm#auto-use
 export NVM_AUTO_USE=true
 
+#
+# ssh
+#
+
+# Define the identities (from ~/.ssh) to be loaded and cached on login
+# https://github.com/zimfw/ssh#settings
+zstyle ':zim:ssh' ids 'id_ed25519'
+
 # ------------------
 # Initialize modules
 # ------------------
@@ -157,9 +165,6 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
-
-# Define the identities (from ~/.ssh) to be loaded and cached on login
-zstyle ':zim:ssh' ids 'id_ed25519'
 
 # https://github.com/Aloxaf/fzf-tab/issues/24#issuecomment-574986122
 zstyle -d ':completion:*' format
