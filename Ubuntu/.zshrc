@@ -2,10 +2,6 @@
 # https://github.com/junegunn/fzf-git.sh#list-of-bindings
 stty -ixon
 
-# Match tmux's default-terminal for true color and Neovim compatibility inside tmux
-# See: .tmux.conf
-export TERM=screen-256color
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -175,9 +171,6 @@ alias vim="nvim"
 # https://docs.astronvim.com/reference/alt_install/#isolated-installation
 alias astronvim="NVIM_APPNAME=astronvim nvim"
 alias astro="astronvim"
-
-# https://github.com/jonas/tig/issues/559#issuecomment-456223819
-alias tig='TERM=xterm-256color tig'
 
 # Set up shell integration
 source /usr/share/doc/fzf/examples/key-bindings.zsh
