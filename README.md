@@ -36,7 +36,7 @@
    ```
 8. Copy `.tmux.conf` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tmux.conf
    ```
 9. Copy `.tigrc` file to home directory
    ```bash
@@ -114,7 +114,7 @@
    ```
 9. Copy `.tmux.conf` file to home directory
    ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.tmux.conf
+   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tmux.conf
    ```
 10. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable and symlink to `~/.local/bin`
     ```bash
