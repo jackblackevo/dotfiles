@@ -1,3 +1,4 @@
+# https://jonas.github.io/tig/doc/tigrc.5.html#_variables
 # https://github.com/jonas/tig/blob/833412390050bd733e89c543944d746343007543/tigrc#L125-L126
 # https://github.com/jonas/tig/blob/833412390050bd733e89c543944d746343007543/src/apps.c#L79-L87
 set diff-highlight = true
