@@ -3,6 +3,9 @@
 # https://github.com/jonas/tig/blob/833412390050bd733e89c543944d746343007543/src/apps.c#L79-L87
 set diff-highlight = yes
 
+# https://jonas.github.io/tig/doc/tigrc.5.html#_view_settings
+set main-view-id = yes
+
 # https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
 # https://www.ditig.com/256-colors-cheat-sheet
 
