@@ -1,9 +1,7 @@
 fd-find
 fzf
 gcc
-git
 ripgrep
 tig
-tmux
 unzip
 zsh
