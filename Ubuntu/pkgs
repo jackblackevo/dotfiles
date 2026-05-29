@@ -2,6 +2,7 @@ fd-find
 fzf
 gcc
 gh
+pre-commit
 ripgrep
 tig
 unzip
