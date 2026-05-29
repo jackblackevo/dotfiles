@@ -119,6 +119,7 @@
 10. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable and symlink to `~/.local/bin`
     ```bash
     sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight \
+    && mkdir -p ~/.local/bin/ \
     && ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight ~/.local/bin/diff-highlight
     ```
 11. Copy `.tigrc` file to home directory
