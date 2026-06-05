@@ -2,6 +2,7 @@ fd-find
 fzf
 gcc
 gh
+jq
 pre-commit
 ripgrep
 tig
