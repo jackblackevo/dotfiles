@@ -22,27 +22,31 @@
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zprofile \
    && curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zshrc
    ```
-5. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
+5. Copy `.ssh/config` file to `~/.ssh` directory (keeps SSH keys in ssh-agent with passphrases stored in the macOS Keychain, pairing with the `ssh-add --apple-load-keychain` run in `.zshrc`)
+   ```bash
+   curl -fsSLO --create-dirs --output-dir ~/.ssh/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.ssh/config
+   ```
+6. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.zimrc
    ```
-6. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
+7. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
-7. Reload Zsh configuration
+8. Reload Zsh configuration
    ```bash
    zsh
    ```
-8. Copy `.tmux.conf` file to home directory
+9. Copy `.tmux.conf` file to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tmux.conf
    ```
-9. Copy `.tigrc` file to home directory
-   ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
-   ```
-10. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+10. Copy `.tigrc` file to home directory
+    ```bash
+    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
+    ```
+11. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \
