@@ -65,24 +65,28 @@
    && curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zprofile \
    && curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zshrc
    ```
-3. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
+3. Copy `.ssh/config` file to `~/.ssh` directory (re-adds SSH keys to the systemd-managed ssh-agent on use, pairing with the `SSH_AUTH_SOCK` set in `.zshenv` and the `ssh-add` run in `.zshrc`)
+   ```bash
+   curl -fsSLO --create-dirs --output-dir ~/.ssh/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.ssh/config
+   ```
+4. Copy `.zimrc` file (for [Zim](https://zimfw.sh/)) to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.zimrc
    ```
-4. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
+5. Copy `.p10k.zsh` file (for [Powerlevel10k](https://github.com/romkatv/powerlevel10k)) to home directory
    ```bash
    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/.p10k.zsh
    ```
-5. Reload Zsh configuration
+6. Reload Zsh configuration
    ```bash
    zsh
    ```
-6. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+7. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
    ```bash
    curl -fsSLO --output-dir /mnt/c/temp/ https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf \
    && explorer.exe "c:\temp"
    ```
-7. Configure Windows Terminal
+8. Configure Windows Terminal
    ```jsonc
    {
        // actions
@@ -108,31 +112,31 @@
        },
    }
    ```
-8. Set Zsh as default shell
+9. Set Zsh as default shell
    ```bash
    chsh -s $(which zsh)
    ```
-9. Copy `.tmux.conf` file to home directory
-   ```bash
-   curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tmux.conf
-   ```
-10. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable and symlink to `~/.local/bin`
+10. Copy `.tmux.conf` file to home directory
+    ```bash
+    curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tmux.conf
+    ```
+11. Make [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight) executable and symlink to `~/.local/bin`
     ```bash
     sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight \
     && mkdir -p ~/.local/bin/ \
     && ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight ~/.local/bin/diff-highlight
     ```
-11. Copy `.tigrc` file to home directory
+12. Copy `.tigrc` file to home directory
     ```bash
     curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/.tigrc
     ```
-12. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
+13. Install Neovim [stable version (release build)](https://github.com/neovim/neovim/releases/tag/stable)
     ```bash
     curl -fsSL --create-dirs --output ~/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage \
     && chmod u+x ~/.local/bin/nvim.appimage \
     && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
-13. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \

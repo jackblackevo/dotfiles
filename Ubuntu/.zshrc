@@ -2,6 +2,18 @@
 # https://github.com/junegunn/fzf-git.sh#list-of-bindings
 stty -ixon
 
+# Load SSH keys into the ssh-agent when it is reachable but has none — exit
+# code 1; 0 (keys loaded) and 2 (no agent) skip silently. Asks for the
+# passphrase once per WSL boot. Needed up front because git commit signing
+# (gpg.format=ssh) runs ssh-keygen -Y sign, which requires the private key
+# already in the agent and, unlike ssh, cannot load it on demand via
+# AddKeysToAgent. Must stay above the Powerlevel10k instant prompt block, as
+# the passphrase prompt requires console input.
+ssh-add -l &>/dev/null
+if (( ? == 1 )); then
+  ssh-add
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -107,14 +119,6 @@ export FZ_HISTORY_CD_CMD=zshz
 
 # https://github.com/lukechilds/zsh-nvm#auto-use
 export NVM_AUTO_USE=true
-
-#
-# ssh
-#
-
-# Define the identities (from ~/.ssh) to be loaded and cached on login
-# https://github.com/zimfw/ssh#settings
-zstyle ':zim:ssh' ids 'id_ed25519'
 
 # ------------------
 # Initialize modules

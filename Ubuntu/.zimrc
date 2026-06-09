@@ -54,8 +54,6 @@ zmodule zsh-users/zsh-history-substring-search
 # performance: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zmodule zsh-users/zsh-autosuggestions
 
-zmodule ssh
-
 zmodule romkatv/powerlevel10k --use degit
 zmodule agkozak/zsh-z
 zmodule lukechilds/zsh-nvm

@@ -8,3 +8,14 @@ skip_global_compinit=1
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# Use the systemd-managed ssh-agent (socket activation, shipped with Ubuntu's
+# openssh-client), so keys added by ssh-add (see ~/.zshrc) or AddKeysToAgent
+# (see ~/.ssh/config) are cached across shell sessions until WSL shuts down.
+# Keep SSH_AUTH_SOCK untouched when already set (e.g. ssh agent forwarding).
+# See:
+# - /usr/lib/systemd/user/ssh-agent.socket
+# - https://man.openbsd.org/ssh_config.5#AddKeysToAgent
+if [[ -z "$SSH_AUTH_SOCK" && -S "${XDG_RUNTIME_DIR:-/run/user/$UID}/openssh_agent" ]]; then
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/run/user/$UID}/openssh_agent"
+fi
