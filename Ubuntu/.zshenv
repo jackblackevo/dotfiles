@@ -9,6 +9,14 @@ skip_global_compinit=1
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Keep only the first occurrence of each PATH entry on every assignment,
+# so nested login shells (e.g. tmux windows) re-running the ~/.zprofile
+# prepend do not accumulate duplicates
+# See:
+# - man zshbuiltins (typeset -U)
+# - https://wiki.archlinux.org/title/Zsh#Configuring_$PATH
+typeset -U PATH path
+
 # Use the systemd-managed ssh-agent (socket activation, shipped with Ubuntu's
 # openssh-client), so keys added by ssh-add (see ~/.zshrc) or AddKeysToAgent
 # (see ~/.ssh/config) are cached across shell sessions until WSL shuts down.
