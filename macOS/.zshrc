@@ -1,8 +1,9 @@
 # Load SSH keys into the ssh-agent with passphrases stored in the macOS
 # Keychain (no prompt). Needed up front because git commit signing
-# (gpg.format=ssh) runs ssh-keygen -Y sign, which requires the private key
-# already in the agent and, unlike ssh, cannot load it on demand via
-# AddKeysToAgent
+# (gpg.format=ssh) runs ssh-keygen -Y sign, which bypasses the ssh client:
+# AddKeysToAgent never caches the key for it, and with the key missing from
+# the agent it falls back to decrypting the private key file, prompting for
+# the passphrase (no Keychain read) on every signature
 ssh-add --apple-load-keychain -q
 
 # Disable flow control for junegunn/fzf-git.sh

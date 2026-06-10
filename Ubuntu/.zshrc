@@ -5,10 +5,12 @@ stty -ixon
 # Load SSH keys into the ssh-agent when it is reachable but has none — exit
 # code 1; 0 (keys loaded) and 2 (no agent) skip silently. Asks for the
 # passphrase once per WSL boot. Needed up front because git commit signing
-# (gpg.format=ssh) runs ssh-keygen -Y sign, which requires the private key
-# already in the agent and, unlike ssh, cannot load it on demand via
-# AddKeysToAgent. Must stay above the Powerlevel10k instant prompt block, as
-# the passphrase prompt requires console input.
+# (gpg.format=ssh) runs ssh-keygen -Y sign, which bypasses the ssh client:
+# AddKeysToAgent never caches the key for it, and with the key missing from
+# the agent it falls back to decrypting the private key file, prompting for
+# the passphrase on every signature (and failing without a TTY). Must stay
+# above the Powerlevel10k instant prompt block, as the passphrase prompt
+# requires console input.
 ssh-add -l &>/dev/null
 if (( ? == 1 )); then
   ssh-add
