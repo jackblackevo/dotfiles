@@ -59,9 +59,9 @@
    ```bash
    sudo apt update \
    && sudo apt upgrade -y \
-   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | xargs sudo apt install -y \
+   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/pkgs | grep -vE '^[[:space:]]*#' | xargs sudo apt install -y \
    && sudo apt clean \
-   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/win-pkgs | xargs winget.exe install
+   && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/Ubuntu/win-pkgs | grep -vE '^[[:space:]]*#' | xargs winget.exe install
    ```
 2. Copy `.zshenv`, `.zprofile` and `.zshrc` file to home directory
    ```bash

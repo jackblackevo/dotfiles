@@ -1,3 +1,11 @@
+# apt packages to install (see README "WSL - Ubuntu" step 1). Lines starting
+# with # are stripped before the list is piped to apt.
+#
+# Packages guaranteed by the WSL Ubuntu base image are intentionally omitted,
+# not missing:
+#   - git: hard dependency of the ubuntu-wsl meta-package
+#   - tmux: pulled in via ubuntu-wsl -> byobu -> tmux
+# Verify on a target box with: apt-cache depends ubuntu-wsl | grep -E 'git|byobu'
 fd-find
 fzf
 gcc
