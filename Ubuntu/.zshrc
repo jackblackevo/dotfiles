@@ -155,9 +155,13 @@ alias vim="nvim"
 alias astronvim="NVIM_APPNAME=astronvim nvim"
 alias astro="astronvim"
 
-# Set up shell integration
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# Set up shell integration from fzf's built-in script (key bindings +
+# completion), mirroring macOS, instead of sourcing the apt-packaged
+# /usr/share/doc/fzf/examples/*.zsh: the script tracks the installed binary and
+# does not depend on the distro's doc path. Requires fzf >= 0.48; Ubuntu 26.04
+# ships 0.67.
+# https://github.com/junegunn/fzf/blob/master/CHANGELOG.md#0480
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
