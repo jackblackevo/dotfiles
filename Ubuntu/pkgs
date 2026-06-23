@@ -7,6 +7,7 @@
 #   - tmux: pulled in via ubuntu-wsl -> byobu -> tmux
 # Verify on a target box with: apt-cache depends ubuntu-wsl | grep -E 'git|byobu'
 fd-find
+ffmpeg
 fzf
 gcc
 gh
