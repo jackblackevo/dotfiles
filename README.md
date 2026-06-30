@@ -46,7 +46,13 @@
     ```bash
     curl -fsSLO --output-dir ~/ https://github.com/jackblackevo/dotfiles/raw/main/macOS/.tigrc
     ```
-11. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+11. Install the latest LTS [Node.js](https://nodejs.org/) through [nvm](https://github.com/nvm-sh/nvm) (set up by the `zsh-nvm` Zim module) and the global npm packages from `npm-pkgs` (currently the [Playwright Agent CLI](https://playwright.dev/agent-cli/installation); browsers download on first use)
+    ```bash
+    nvm install --lts \
+    && nvm alias default 'lts/*' \
+    && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/npm-pkgs | grep -vE '^[[:space:]]*#' | xargs npm install -g
+    ```
+12. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \
@@ -140,7 +146,13 @@
     && chmod u+x ~/.local/bin/nvim.appimage \
     && ln -sf ~/.local/bin/nvim.appimage ~/.local/bin/nvim
     ```
-14. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
+14. Install the latest LTS [Node.js](https://nodejs.org/) through [nvm](https://github.com/nvm-sh/nvm) (set up by the `zsh-nvm` Zim module) and the global npm packages from `npm-pkgs` (currently the [Playwright Agent CLI](https://playwright.dev/agent-cli/installation); browsers download on first use)
+    ```bash
+    nvm install --lts \
+    && nvm alias default 'lts/*' \
+    && curl -fsSL https://github.com/jackblackevo/dotfiles/raw/main/npm-pkgs | grep -vE '^[[:space:]]*#' | xargs npm install -g
+    ```
+15. Install [AstroNvim](https://astronvim.com/) (use [unattended](https://docs.astronvim.com/reference/alt_install/#unattended-installation) and [isolated](https://docs.astronvim.com/reference/alt_install/#isolated-installation) installation)  
     See: [AstroNvim configuration](https://github.com/jackblackevo/astronvim_config)
     ```bash
     git clone https://github.com/jackblackevo/astronvim_config.git ~/.config/astronvim \

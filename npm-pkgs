@@ -1,0 +1,3 @@
+# global npm packages to install (see README). Lines starting with # are
+# stripped before the list is piped to npm. Shared across macOS and Ubuntu.
+@playwright/cli
