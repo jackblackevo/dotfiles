@@ -8,6 +8,7 @@
 # Verify on a target box with: apt-cache depends ubuntu-wsl | grep -E 'git|byobu'
 fd-find
 ffmpeg
+fonts-noto-cjk
 fzf
 gcc
 gh
