@@ -93,7 +93,8 @@
    ```
 7. Download & Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
    ```bash
-   curl -fsSLO --output-dir /mnt/c/temp/ https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/HackNerdFontMono-Regular.ttf \
+   curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz \
+   | tar -xJ -C /mnt/c/temp/ HackNerdFontMono-Regular.ttf \
    && explorer.exe "c:\temp"
    ```
 8. Configure Windows Terminal
