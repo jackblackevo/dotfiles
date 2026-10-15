@@ -57,6 +57,6 @@ zmodule zsh-users/zsh-autosuggestions
 zmodule romkatv/powerlevel10k --use degit
 zmodule agkozak/zsh-z
 zmodule lukechilds/zsh-nvm
-zmodule mrjohannchang/fz.sh --name fz
+zmodule johannjhang/fz.sh --name fz
 zmodule Aloxaf/fzf-tab
 zmodule junegunn/fzf-git.sh --name fzf-git

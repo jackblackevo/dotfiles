@@ -111,7 +111,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # fz
 #
 
-# Use agkozak/zsh-z instead of rupa/z for mrjohannchang/fz.sh
+# Use agkozak/zsh-z instead of rupa/z for johannjhang/fz.sh
 # https://github.com/johannjhang/fz.sh/issues/21#issuecomment-541839988
 export FZ_HISTORY_CD_CMD=zshz
 
